@@ -4,9 +4,9 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: 'AI-Powered Portfolio Website',
+      title: 'Videography',
       description:
-        'A modern, responsive portfolio website built with Next.js 14 and AI assistance. Features smooth animations, gradient backgrounds, and a professional design that showcases my journey from law enforcement to tech.',
+        'i am a videographer and video editor. I have a passion for creating videos that tell a story and inspire people.',
       technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'AI Development'],
       gradient: 'from-blue-500 to-purple-600',
       icon: '🚀',
