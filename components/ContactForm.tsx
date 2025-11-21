@@ -154,7 +154,7 @@ export default function ContactForm() {
               ? 'border-red-500 dark:border-red-500'
               : 'border-gray-300 dark:border-gray-600'
           }`}
-          placeholder="your.email@example.com"
+          placeholder="simeondoolarsingh@hotmail.com"
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-500">{errors.email}</p>
