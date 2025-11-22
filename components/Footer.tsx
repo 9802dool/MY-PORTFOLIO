@@ -60,7 +60,7 @@ export default function Footer() {
               <a
                 key={link.name}
                 href={link.href}
-                className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/5 hover:bg-blue-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-blue-500 transition-all duration-300"
+                className="inline-flex items-center justify-center h-10 w-10 rounded-full bg-white/5 hover:bg-red-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-red-500 transition-all duration-300"
                 aria-label={link.name}
               >
                 <span className="sr-only">{link.name}</span>

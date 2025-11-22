@@ -124,7 +124,7 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
             errors.name
               ? 'border-red-500 dark:border-red-500'
               : 'border-gray-300 dark:border-gray-600'
@@ -149,7 +149,7 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
             errors.email
               ? 'border-red-500 dark:border-red-500'
               : 'border-gray-300 dark:border-gray-600'
@@ -211,7 +211,7 @@ export default function ContactForm() {
         className={`w-full px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl ${
           isSubmitting
             ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-            : 'bg-blue-600 hover:bg-blue-700 hover:scale-105 text-white'
+            : 'bg-red-600 hover:bg-red-700 hover:scale-105 text-white'
         }`}
       >
         {isSubmitting ? (

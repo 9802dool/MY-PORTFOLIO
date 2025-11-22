@@ -8,7 +8,7 @@ export default function Projects() {
       description:
         'i am a videographer and video editor. I have a passion for creating videos that tell a story and inspire people.',
       technologies: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'AI Development'],
-      gradient: 'from-blue-500 to-purple-600',
+      gradient: 'from-red-600 to-black',
       icon: '🚀',
     },
     {
@@ -17,7 +17,7 @@ export default function Projects() {
       description:
         'A web application designed to improve community engagement and safety reporting. Built with modern web technologies, combining my experience in law enforcement with new development skills.',
       technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-      gradient: 'from-indigo-500 to-blue-600',
+      gradient: 'from-white to-red-600',
       icon: '🛡️',
     },
     {
@@ -26,7 +26,7 @@ export default function Projects() {
       description:
         'A personal project tracking my journey learning Next.js and AI development. Features progress visualization, skill tracking, and project management tools to document my growth as a developer.',
       technologies: ['Next.js', 'TypeScript', 'Chart.js', 'Local Storage'],
-      gradient: 'from-purple-500 to-pink-600',
+      gradient: 'from-black to-red-600',
       icon: '📈',
     },
   ]
@@ -41,7 +41,7 @@ export default function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My Projects
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-red-600 via-white to-black mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Here are some of my recent projects that showcase my skills and experience.
           </p>
@@ -81,7 +81,7 @@ export default function Projects() {
                   <div className="flex gap-4">
                     <a
                       href="#"
-                      className="text-blue-600 dark:text-blue-400 font-semibold hover:underline flex items-center gap-1 group/link"
+                      className="text-red-600 dark:text-red-400 font-semibold hover:underline flex items-center gap-1 group/link"
                     >
                       View Project
                       <span className="group-hover/link:translate-x-1 transition-transform">→</span>

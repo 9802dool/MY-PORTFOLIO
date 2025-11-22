@@ -12,13 +12,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800 dark:from-blue-900 dark:via-purple-900 dark:to-indigo-950"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-600 via-gray-100 to-black dark:from-red-900 dark:via-gray-800 dark:to-black"
     >
       {/* Animated gradient orbs for depth */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-72 h-72 sm:w-80 sm:h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-80 sm:h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-32 -right-32 w-72 h-72 sm:w-80 sm:h-80 bg-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-80 sm:h-80 bg-black rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
       
       {/* Gradient overlay for better text readability */}
@@ -35,7 +35,7 @@ export default function Hero() {
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight md:leading-[1.05] drop-shadow-lg">
             My Name Is{' '}
-            <span className="block sm:inline bg-gradient-to-r from-blue-200 via-purple-200 to-pink-200 bg-clip-text text-transparent">
+            <span className="block sm:inline bg-gradient-to-r from-red-400 via-white to-black bg-clip-text text-transparent">
               Simeon Doolarsingh
             </span>
           </h1>
@@ -58,7 +58,7 @@ export default function Hero() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3 bg-white text-red-600 rounded-lg font-semibold hover:bg-red-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer"
             >
               View My Work
             </a>
