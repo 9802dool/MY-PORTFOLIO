@@ -1,4 +1,5 @@
 import Reveal from '@/components/Reveal'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -59,8 +60,15 @@ export default function About() {
           
           <Reveal className="relative" delay={150}>
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-red-600 via-white to-black p-1">
-              <div className="w-full h-full rounded-2xl bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-4xl text-gray-400">Your Photo</span>
+              <div className="w-full h-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                <Image
+                  src="/profile.jpg"
+                  alt="Simeon Doolarsingh"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover rounded-2xl"
+                  priority
+                />
               </div>
             </div>
           </Reveal>
