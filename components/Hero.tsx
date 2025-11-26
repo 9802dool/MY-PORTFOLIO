@@ -40,7 +40,7 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-4 sm:mb-6 max-w-3xl mx-auto drop-shadow-md">
-            I am a police officer stepping confidently into the world of tech.
+            I am a police officer stepping confidently into the world of tech and AI development.
           </p>
           <p className="text-base sm:text-lg md:text-xl text-white/80 mb-10 sm:mb-12 max-w-2xl mx-auto drop-shadow-md">
             I'm learning to build with AI and Next.js—combining discipline from the field with the excitement of modern development. LET'S GO!
