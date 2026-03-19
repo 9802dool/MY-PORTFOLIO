@@ -58,40 +58,6 @@ export default function Hero() {
           <p className="text-base sm:text-lg md:text-xl text-white/80 mb-10 sm:mb-12 max-w-2xl mx-auto drop-shadow-md">
             I'm learning to build with AI and Next.js—combining discipline from the field with the excitement of modern development. LET'S GO!
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <a
-              href="#gallery"
-              onClick={(e) => {
-                e.preventDefault()
-                const element = document.querySelector('#gallery')
-                if (element) {
-                  const offset = 80
-                  const elementPosition = element.getBoundingClientRect().top
-                  const offsetPosition = elementPosition + window.pageYOffset - offset
-                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                }
-              }}
-              className="w-full sm:w-auto px-8 py-3 bg-white/10 text-amber-100 border-2 border-amber-500/30 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer"
-            >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                const element = document.querySelector('#contact')
-                if (element) {
-                  const offset = 80
-                  const elementPosition = element.getBoundingClientRect().top
-                  const offsetPosition = elementPosition + window.pageYOffset - offset
-                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-                }
-              }}
-              className="w-full sm:w-auto px-8 py-3 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
-            >
-              Connect With Me
-            </a>
-          </div>
         </div>
         <div className="mt-16 sm:mt-20 flex justify-center">
           <div className="hidden sm:flex animate-bounce">
