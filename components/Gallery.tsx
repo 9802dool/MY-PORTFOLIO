@@ -5,9 +5,16 @@ import Image from 'next/image'
 import Reveal from '@/components/Reveal'
 
 const galleryItems = [
-  // Keep a few placeholders for other tabs (until you provide local photos)
-  { src: '/profile.jpg', alt: 'Portrait placeholder 1', tag: 'Portrait' },
-  { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
+  { src: '/p1.JPG', alt: 'Portrait photo 1', tag: 'Portrait' },
+  { src: '/p2.JPG', alt: 'Portrait photo 2', tag: 'Portrait' },
+  { src: '/p3.JPG', alt: 'Portrait photo 3', tag: 'Portrait' },
+  { src: '/p4.JPG', alt: 'Portrait photo 4', tag: 'Portrait' },
+  { src: '/p5.JPG', alt: 'Portrait photo 5', tag: 'Portrait' },
+  { src: '/p6.JPG', alt: 'Portrait photo 6', tag: 'Portrait' },
+  { src: '/p7.JPG', alt: 'Portrait photo 7', tag: 'Portrait' },
+  { src: '/p8.JPG', alt: 'Portrait photo 8', tag: 'Portrait' },
+  { src: '/p9.JPG', alt: 'Portrait photo 9', tag: 'Portrait' },
+  { src: '/p10.JPG', alt: 'Portrait photo 10', tag: 'Portrait' },
   { src: '/L1.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
   { src: '/L2.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
   { src: '/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
