@@ -59,14 +59,15 @@ export default function About() {
           </Reveal>
           
           <Reveal className="relative" delay={150}>
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-amber-700 via-white to-neutral-900 p-1">
-              <div className="w-full h-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            <div className="aspect-square rounded-[2rem] bg-gradient-to-br from-amber-700 via-white to-neutral-900 p-2">
+              <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-neutral-50/70 dark:bg-neutral-800/70 flex items-center justify-center ring-1 ring-amber-400/20">
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-300/15 via-transparent to-black/10" />
                 <Image
                   src="/profile.jpg"
                   alt="Simeon Doolarsingh"
                   width={400}
                   height={400}
-                  className="w-full h-full object-cover rounded-2xl"
+                  className="w-full h-full object-cover rounded-[1.75rem]"
                   priority
                 />
               </div>
