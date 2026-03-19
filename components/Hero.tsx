@@ -13,12 +13,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-red-600 via-gray-100 to-black dark:from-red-900 dark:via-gray-800 dark:to-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-950 via-stone-900 to-black dark:from-neutral-950 dark:via-neutral-900 dark:to-black"
     >
       {/* Animated gradient orbs for depth */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 -right-32 w-72 h-72 sm:w-80 sm:h-80 bg-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute -top-32 -right-32 w-72 h-72 sm:w-80 sm:h-80 bg-amber-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-stone-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-80 sm:h-80 bg-black rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
       
@@ -31,12 +31,12 @@ export default function Hero() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 mb-6 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-white bg-white/20 backdrop-blur-md rounded-full border border-white/30">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 mb-6 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em] text-white bg-white/15 backdrop-blur-md rounded-full border border-amber-400/20">
             Let's Go
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight md:leading-[1.05] drop-shadow-lg">
             My Name Is{' '}
-            <span className="block sm:inline bg-gradient-to-r from-red-400 via-white to-black bg-clip-text text-transparent">
+            <span className="block sm:inline bg-gradient-to-r from-amber-200 via-white to-neutral-900 bg-clip-text text-transparent">
               Simeon Doolarsingh
             </span>
           </h1>
@@ -59,7 +59,7 @@ export default function Hero() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="w-full sm:w-auto px-8 py-3 bg-white text-red-600 rounded-lg font-semibold hover:bg-red-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer"
+              className="w-full sm:w-auto px-8 py-3 bg-white/10 text-amber-100 border-2 border-amber-500/30 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer"
             >
               View My Work
             </a>
@@ -85,8 +85,8 @@ export default function Hero() {
           className={`mt-10 sm:mt-12 flex justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
         >
-          <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-[2rem] bg-white/10 backdrop-blur-md border border-white/20 overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-white/10 to-black/20" />
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-[2rem] bg-white/10 backdrop-blur-md border border-amber-200/20 overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/20 via-white/10 to-black/20" />
             <Image
               src="/profile.jpg"
               alt="Simeon Doolarsingh"

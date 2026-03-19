@@ -116,7 +116,7 @@ export default function ContactForm() {
           htmlFor="name"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
         >
-          Name <span className="text-red-500">*</span>
+          Name <span className="text-amber-500">*</span>
         </label>
         <input
           type="text"
@@ -124,15 +124,15 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
             errors.name
-              ? 'border-red-500 dark:border-red-500'
+              ? 'border-amber-500 dark:border-amber-500'
               : 'border-gray-300 dark:border-gray-600'
           }`}
           placeholder="Your Name"
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+          <p className="mt-1 text-sm text-amber-600">{errors.name}</p>
         )}
       </div>
 
@@ -141,7 +141,7 @@ export default function ContactForm() {
           htmlFor="email"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
         >
-          Email <span className="text-red-500">*</span>
+          Email <span className="text-amber-500">*</span>
         </label>
         <input
           type="email"
@@ -149,15 +149,15 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
             errors.email
-              ? 'border-red-500 dark:border-red-500'
+              ? 'border-amber-500 dark:border-amber-500'
               : 'border-gray-300 dark:border-gray-600'
           }`}
           placeholder="simeondoolarsingh@hotmail.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+          <p className="mt-1 text-sm text-amber-600">{errors.email}</p>
         )}
       </div>
 
@@ -166,7 +166,7 @@ export default function ContactForm() {
           htmlFor="message"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
         >
-          Message <span className="text-red-500">*</span>
+          Message <span className="text-amber-500">*</span>
         </label>
         <textarea
           id="message"
@@ -174,15 +174,15 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none transition-colors ${
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none transition-colors ${
             errors.message
-              ? 'border-red-500 dark:border-red-500'
+              ? 'border-amber-500 dark:border-amber-500'
               : 'border-gray-300 dark:border-gray-600'
           }`}
           placeholder="Your message here..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+          <p className="mt-1 text-sm text-amber-600">{errors.message}</p>
         )}
         <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
           {formData.message.length} characters
@@ -198,8 +198,8 @@ export default function ContactForm() {
       )}
 
       {submitStatus === 'error' && (
-        <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
-          <p className="text-sm text-red-800 dark:text-red-300">
+        <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+          <p className="text-sm text-amber-800 dark:text-amber-200">
             ✗ Something went wrong. Please try again later.
           </p>
         </div>
@@ -211,7 +211,7 @@ export default function ContactForm() {
         className={`w-full px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl ${
           isSubmitting
             ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-            : 'bg-red-600 hover:bg-red-700 hover:scale-105 text-white'
+            : 'bg-amber-700 hover:bg-amber-800 hover:scale-105 text-white'
         }`}
       >
         {isSubmitting ? (

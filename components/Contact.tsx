@@ -7,14 +7,14 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-white dark:bg-gray-800"
+      className="py-20 bg-neutral-50 dark:bg-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-red-600 via-white to-black mx-auto mb-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-700 via-white to-neutral-900 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
             Send me a message and I'll respond as soon as possible.
@@ -30,9 +30,9 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
                       <svg
-                        className="w-6 h-6 text-red-600 dark:text-red-400"
+                        className="w-6 h-6 text-amber-700 dark:text-amber-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -51,9 +51,9 @@ export default function Contact() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
                       <svg
-                        className="w-6 h-6 text-red-600 dark:text-red-400"
+                        className="w-6 h-6 text-amber-700 dark:text-amber-400"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ export default function Contact() {
                     <Reveal key={social.name} delay={index * 80}>
                       <a
                         href="#"
-                        className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-red-600 hover:text-white transition-colors text-xl"
+                        className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-amber-700 hover:text-white transition-colors text-xl"
                         aria-label={social.name}
                       >
                         {social.icon}

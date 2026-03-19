@@ -33,14 +33,14 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-20 bg-gray-50 dark:bg-gray-900"
+      className="py-20 bg-neutral-50 dark:bg-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Gallery
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-red-600 via-white to-black mx-auto mb-4" />
+          <div className="w-24 h-1 bg-gradient-to-r from-amber-700 via-white to-neutral-900 mx-auto mb-4" />
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             A curated set of photography shots. Replace these placeholders with your real images in `public/`.
           </p>
@@ -72,7 +72,7 @@ export default function Gallery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
-                    <span className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-semibold">
+                    <span className="px-3 py-1 rounded-full bg-amber-500/10 backdrop-blur-md border border-amber-400/20 text-amber-100 text-sm font-semibold">
                       {item.tag}
                     </span>
                     <span className="text-white/80 text-sm font-medium">
