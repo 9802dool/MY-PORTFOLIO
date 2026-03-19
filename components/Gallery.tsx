@@ -9,7 +9,13 @@ const galleryItems = [
   { src: '/profile.jpg', alt: 'Portrait placeholder 1', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Street placeholder 1', tag: 'Street' },
-  { src: '/profile.jpg', alt: 'Landscape placeholder 1', tag: 'Landscape' },
+  { src: '/Landscape/IMG_0009.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2518.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2521.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2522.JPG', alt: 'Landscape photo 4', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2524.JPG', alt: 'Landscape photo 5', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2525.JPG', alt: 'Landscape photo 6', tag: 'Landscape' },
+  { src: '/Landscape/IMG_2526.JPG', alt: 'Landscape photo 7', tag: 'Landscape' },
 ] as const
 
 const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
