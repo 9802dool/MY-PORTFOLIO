@@ -9,6 +9,21 @@ const galleryItems = [
   { src: '/profile.jpg', alt: 'Portrait placeholder 1', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Street placeholder 1', tag: 'Street' },
+  { src: '/Landscape 1/IMG_0009.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2219.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2287.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2291.JPG', alt: 'Landscape photo 4', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2292.JPG', alt: 'Landscape photo 5', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2293.JPG', alt: 'Landscape photo 6', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2295.JPG', alt: 'Landscape photo 7', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2296.JPG', alt: 'Landscape photo 8', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2300.JPG', alt: 'Landscape photo 9', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2518.JPG', alt: 'Landscape photo 10', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2521.JPG', alt: 'Landscape photo 11', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2522.JPG', alt: 'Landscape photo 12', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2524.JPG', alt: 'Landscape photo 13', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2525.JPG', alt: 'Landscape photo 14', tag: 'Landscape' },
+  { src: '/Landscape 1/IMG_2526.JPG', alt: 'Landscape photo 15', tag: 'Landscape' },
 ] as const
 
 const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
@@ -25,13 +40,31 @@ export default function Gallery() {
   const activeItem =
     activeIndex === null ? null : (filteredItems[activeIndex] ?? null)
 
+  const showPrevious = () => {
+    if (!filteredItems.length) return
+    setActiveIndex((prev) => {
+      if (prev === null) return 0
+      return (prev - 1 + filteredItems.length) % filteredItems.length
+    })
+  }
+
+  const showNext = () => {
+    if (!filteredItems.length) return
+    setActiveIndex((prev) => {
+      if (prev === null) return 0
+      return (prev + 1) % filteredItems.length
+    })
+  }
+
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setActiveIndex(null)
+      if (activeIndex !== null && e.key === 'ArrowLeft') showPrevious()
+      if (activeIndex !== null && e.key === 'ArrowRight') showNext()
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [])
+  }, [activeIndex, filteredItems.length])
 
   return (
     <section
@@ -125,9 +158,51 @@ export default function Gallery() {
               alt={activeItem.alt}
               fill
               sizes="(max-width: 768px) 100vw, 60vw"
-              className="object-cover"
+              className="object-contain"
+              quality={100}
               priority
             />
+
+            {filteredItems.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={showPrevious}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="Previous photo"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={showNext}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label="Next photo"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </>
+            )}
 
             <button
               type="button"
