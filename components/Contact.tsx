@@ -77,6 +77,40 @@ export default function Contact() {
                       <p className="text-gray-900 dark:text-white">Chaguanas, Trinidad and Tobago</p>
                     </div>
                   </div>
+
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
+                      <svg
+                        className="w-6 h-6 text-amber-700 dark:text-amber-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21 11.5a8.38 8.38 0 0 1-1.88 5.16L22 21l-4.34-1.83A8.38 8.38 0 0 1 12 19.5c-4.69 0-8.5-3.81-8.5-8.5S7.31 2.5 12 2.5s9 3.81 9 9z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M8.5 10.5c1.5 3 5.5 5 8 5"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">WhatsApp</p>
+                      <a
+                        href="https://wa.me/18683224691"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-gray-900 dark:text-white hover:text-amber-700 transition-colors"
+                      >
+                        18683224691
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div>
