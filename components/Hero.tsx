@@ -48,10 +48,10 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="#projects"
+              href="#gallery"
               onClick={(e) => {
                 e.preventDefault()
-                const element = document.querySelector('#projects')
+                const element = document.querySelector('#gallery')
                 if (element) {
                   const offset = 80
                   const elementPosition = element.getBoundingClientRect().top
