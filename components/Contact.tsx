@@ -85,14 +85,11 @@ export default function Contact() {
                 </h3>
                 <div className="flex space-x-4">
                   {[
-                    { name: 'GitHub', href: '#', icon: '💻' },
-                    { name: 'LinkedIn', href: '#', icon: '💼' },
                     {
                       name: 'Facebook',
                       href: 'https://www.facebook.com/profile.php?id=100090911882183',
                       icon: '📘',
                     },
-                    { name: 'Twitter', href: '#', icon: '🐦' },
                   ].map((social, index) => (
                     <Reveal key={social.name} delay={index * 80}>
                       <a
