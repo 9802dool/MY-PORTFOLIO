@@ -84,7 +84,7 @@ export default function Navbar() {
             className="text-xl font-bold text-gray-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 transition-colors"
             onClick={handleLogoClick}
           >
-            Portfolio
+            Look Meh Dey
           </Link>
 
           <div className="flex items-center gap-2">
