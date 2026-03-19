@@ -8,7 +8,6 @@ const galleryItems = [
   // Keep a few placeholders for other tabs (until you provide local photos)
   { src: '/profile.jpg', alt: 'Portrait placeholder 1', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
-  { src: '/profile.jpg', alt: 'Street placeholder 1', tag: 'Street' },
   { src: '/L1.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
   { src: '/L2.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
   { src: '/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
@@ -25,7 +24,7 @@ const galleryItems = [
   { src: '/L14.JPG', alt: 'Landscape photo 14', tag: 'Landscape' },
 ] as const
 
-const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
+const galleryTabs = ['All', 'Portrait', 'Event', 'Landscape'] as const
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState<(typeof galleryTabs)[number]>('All')
@@ -196,20 +195,20 @@ export default function Gallery() {
 
       {activeItem && activeIndex !== null && (
         <div
-          className="fixed inset-0 z-[60] bg-black/70 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[60] bg-black/90"
           role="dialog"
           aria-modal="true"
           onClick={() => setActiveIndex(null)}
         >
           <div
-            className="relative w-full max-w-3xl h-[70vh] rounded-2xl overflow-hidden border border-white/20 bg-black shadow-2xl"
+            className="relative w-full h-full overflow-hidden bg-black"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={activeItem.src}
               alt={activeItem.alt}
               fill
-              sizes="(max-width: 768px) 100vw, 60vw"
+              sizes="100vw"
               className="object-contain"
               quality={100}
               priority
