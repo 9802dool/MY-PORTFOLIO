@@ -49,28 +49,22 @@ const socialLinks = [
     name: 'Facebook',
     href: 'https://www.facebook.com/profile.php?id=100090911882183',
     icon: (
-      <svg
-        className="h-5 w-5"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.1V12h2.1V9.8c0-2.1 1.2-3.3 3.2-3.3.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 2.9h-1.8v7A10 10 0 0022 12z" />
-      </svg>
+      <img
+        src="/fb icon.png"
+        alt="Facebook icon"
+        className="w-5 h-5 object-contain"
+      />
     ),
   },
   {
     name: 'Instagram',
     href: 'https://www.instagram.com/lookmehdey/',
     icon: (
-      <svg
-        className="h-5 w-5"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm5.25-2.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z" />
-      </svg>
+      <img
+        src="/ig icon.png"
+        alt="Instagram icon"
+        className="w-5 h-5 object-contain"
+      />
     ),
   },
 ]

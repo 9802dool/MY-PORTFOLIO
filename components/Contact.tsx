@@ -87,12 +87,24 @@ export default function Contact() {
                     {
                       name: 'Facebook',
                       href: 'https://www.facebook.com/profile.php?id=100090911882183',
-                      icon: '📘',
+                      icon: (
+                        <img
+                          src="/fb icon.png"
+                          alt="Facebook icon"
+                          className="w-5 h-5 object-contain"
+                        />
+                      ),
                     },
                     {
                       name: 'Instagram',
                       href: 'https://www.instagram.com/lookmehdey/',
-                      icon: '📸',
+                      icon: (
+                        <img
+                          src="/ig icon.png"
+                          alt="Instagram icon"
+                          className="w-5 h-5 object-contain"
+                        />
+                      ),
                     },
                   ].map((social, index) => (
                     <Reveal key={social.name} delay={index * 80}>
