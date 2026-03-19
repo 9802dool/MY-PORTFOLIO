@@ -9,20 +9,20 @@ const galleryItems = [
   { src: '/profile.jpg', alt: 'Portrait placeholder 1', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Street placeholder 1', tag: 'Street' },
-  { src: '/Landscape 1/L1.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
-  { src: '/Landscape 1/L2.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
-  { src: '/Landscape 1/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
-  { src: '/Landscape 1/L4.JPG', alt: 'Landscape photo 4', tag: 'Landscape' },
-  { src: '/Landscape 1/L5.JPG', alt: 'Landscape photo 5', tag: 'Landscape' },
-  { src: '/Landscape 1/L6.JPG', alt: 'Landscape photo 6', tag: 'Landscape' },
-  { src: '/Landscape 1/L7.JPG', alt: 'Landscape photo 7', tag: 'Landscape' },
-  { src: '/Landscape 1/L8.JPG', alt: 'Landscape photo 8', tag: 'Landscape' },
-  { src: '/Landscape 1/L9.JPG', alt: 'Landscape photo 9', tag: 'Landscape' },
-  { src: '/Landscape 1/L10.JPG', alt: 'Landscape photo 10', tag: 'Landscape' },
-  { src: '/Landscape 1/L11.JPG', alt: 'Landscape photo 11', tag: 'Landscape' },
-  { src: '/Landscape 1/L12.JPG', alt: 'Landscape photo 12', tag: 'Landscape' },
-  { src: '/Landscape 1/L13.JPG', alt: 'Landscape photo 13', tag: 'Landscape' },
-  { src: '/Landscape 1/L14.JPG', alt: 'Landscape photo 14', tag: 'Landscape' },
+  { src: '/L1.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
+  { src: '/L2.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
+  { src: '/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
+  { src: '/L4.JPG', alt: 'Landscape photo 4', tag: 'Landscape' },
+  { src: '/L5.JPG', alt: 'Landscape photo 5', tag: 'Landscape' },
+  { src: '/L6.JPG', alt: 'Landscape photo 6', tag: 'Landscape' },
+  { src: '/L7.JPG', alt: 'Landscape photo 7', tag: 'Landscape' },
+  { src: '/L8.JPG', alt: 'Landscape photo 8', tag: 'Landscape' },
+  { src: '/L9.JPG', alt: 'Landscape photo 9', tag: 'Landscape' },
+  { src: '/L10.JPG', alt: 'Landscape photo 10', tag: 'Landscape' },
+  { src: '/L11.JPG', alt: 'Landscape photo 11', tag: 'Landscape' },
+  { src: '/L12.JPG', alt: 'Landscape photo 12', tag: 'Landscape' },
+  { src: '/L13.JPG', alt: 'Landscape photo 13', tag: 'Landscape' },
+  { src: '/L14.JPG', alt: 'Landscape photo 14', tag: 'Landscape' },
 ] as const
 
 const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
@@ -100,6 +100,58 @@ export default function Gallery() {
             </button>
           ))}
         </div>
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <button
+            type="button"
+            onClick={() => {
+              if (!filteredItems.length) return
+              if (activeIndex === null) {
+                setActiveIndex(filteredItems.length - 1)
+                return
+              }
+              showPrevious()
+            }}
+            className="w-10 h-10 rounded-full bg-white/70 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200 flex items-center justify-center hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+            aria-label="Previous photo"
+          >
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (!filteredItems.length) return
+              if (activeIndex === null) {
+                setActiveIndex(0)
+                return
+              }
+              showNext()
+            }}
+            className="w-10 h-10 rounded-full bg-white/70 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200 flex items-center justify-center hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+            aria-label="Next photo"
+          >
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {filteredItems.map((item, index) => (
@@ -114,13 +166,14 @@ export default function Gallery() {
                 className="group w-full text-left"
                 aria-label={`Open photo: ${item.tag}`}
               >
-                <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-lg">
+                <div className="relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-lg">
                   <Image
                     src={item.src}
                     alt={item.alt}
                     fill
                     sizes="(max-width: 768px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-contain transition-transform duration-500 group-hover:scale-110"
+                    quality={100}
                     priority={index < 3}
                   />
 
