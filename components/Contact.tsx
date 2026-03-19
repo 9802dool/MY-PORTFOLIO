@@ -90,6 +90,11 @@ export default function Contact() {
                       href: 'https://www.facebook.com/profile.php?id=100090911882183',
                       icon: '📘',
                     },
+                    {
+                      name: 'Instagram',
+                      href: 'https://www.instagram.com/lookmehdey/',
+                      icon: '📸',
+                    },
                   ].map((social, index) => (
                     <Reveal key={social.name} delay={index * 80}>
                       <a
