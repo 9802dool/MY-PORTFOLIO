@@ -16,11 +16,19 @@ const galleryItems = [
   { src: '/profile.jpg', alt: 'Photography sample 9', tag: 'Portrait' },
 ] as const
 
+const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
+
 export default function Gallery() {
+  const [activeTab, setActiveTab] = useState<(typeof galleryTabs)[number]>('All')
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
+  const filteredItems =
+    activeTab === 'All'
+      ? galleryItems
+      : galleryItems.filter((item) => item.tag === activeTab)
+
   const activeItem =
-    activeIndex === null ? null : (galleryItems[activeIndex] ?? null)
+    activeIndex === null ? null : (filteredItems[activeIndex] ?? null)
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -46,8 +54,28 @@ export default function Gallery() {
           </p>
         </Reveal>
 
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          {galleryTabs.map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => {
+                setActiveTab(tab)
+                setActiveIndex(null)
+              }}
+              className={`px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${
+                activeTab === tab
+                  ? 'bg-amber-700 text-white border-amber-700'
+                  : 'bg-white/70 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-neutral-700 hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300'
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {galleryItems.map((item, index) => (
+          {filteredItems.map((item, index) => (
             <Reveal
               key={`${item.alt}-${index}`}
               delay={index * 60}
@@ -137,7 +165,7 @@ export default function Gallery() {
                   </p>
                 </div>
                 <p className="text-white/60 text-sm">
-                  {activeIndex + 1}/{galleryItems.length}
+                  {activeIndex + 1}/{filteredItems.length}
                 </p>
               </div>
             </div>
