@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
@@ -78,6 +79,22 @@ export default function Hero() {
             >
               Connect With Me
             </a>
+          </div>
+        </div>
+        <div
+          className={`mt-10 sm:mt-12 flex justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            }`}
+        >
+          <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-[2rem] bg-white/10 backdrop-blur-md border border-white/20 overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 via-white/10 to-black/20" />
+            <Image
+              src="/profile.jpg"
+              alt="Simeon Doolarsingh"
+              width={600}
+              height={600}
+              className="relative w-full h-full object-cover rounded-[2rem] transform hover:scale-105 transition-transform duration-500"
+              priority
+            />
           </div>
         </div>
         <div className="mt-16 sm:mt-20 flex justify-center">
