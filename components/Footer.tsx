@@ -45,6 +45,20 @@ const socialLinks = [
       </svg>
     ),
   },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=100090911882183',
+    icon: (
+      <svg
+        className="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.1V12h2.1V9.8c0-2.1 1.2-3.3 3.2-3.3.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 2.9h-1.8v7A10 10 0 0022 12z" />
+      </svg>
+    ),
+  },
 ]
 
 export default function Footer() {
