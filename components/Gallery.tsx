@@ -10,53 +10,6 @@ const galleryItems = [
   { src: '/profile.jpg', alt: 'Portrait placeholder 2', tag: 'Portrait' },
   { src: '/profile.jpg', alt: 'Street placeholder 1', tag: 'Street' },
   { src: '/profile.jpg', alt: 'Landscape placeholder 1', tag: 'Landscape' },
-
-  // Event photos from the provided Facebook album link
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472311674_539424545764604_6631314977338453137_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=106&ccb=1-7&_nc_sid=2a1932&_nc_ohc=U_gvy2Vigl4Q7kNvwGPhsjq&_nc_oc=AdrZ1FOHCBwdhv_6Fhk_3Nh20h2bsbXoUgoPq9dJGzTLTiB9f3Pto_wn1jt_r85g7AQ&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfygjLypzVIzVNOqoUFmiOYIQB_Au7Bg9-xuH-4UwrFZkA&oe=69C20964',
-    alt: 'Event photo 1',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472277211_539418389098553_3015945418653063661_n.jpg?stp=dst-jpg_s417x417_tt6&_nc_cat=106&ccb=1-7&_nc_sid=dd6889&_nc_ohc=_vXb6owDU24Q7kNvwEIAYeu&_nc_oc=AdomeWRGDQ-anctLUnb2cvopBcAOJfoY_CfVRHhzLCX1PbLfb0Y_iwPlCKXughUxwr4&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfzmjcWIhxnp9HLXrXDbm-q76j2OZXIHY7yCw743s1tXXw&oe=69C1FD93',
-    alt: 'Event photo 2',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472313168_539418162431909_1552450500731897031_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=103&ccb=1-7&_nc_sid=dd6889&_nc_ohc=l5VUkX-Z_gkQ7kNvwEdDs_J&_nc_oc=AdocLCMkYDBNyLnWDoBhd0z1CUKDMil2CYQW9DW6FUYWuefXCG-8_oCa4FbY5WNASm4&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_Afzr5WpqW2223FU9BsbCB5-MyV532viCthfODNd0OPAn1A&oe=69C21B0A',
-    alt: 'Event photo 3',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472408775_539418119098580_7913124891961010498_n.jpg?stp=dst-jpg_s417x417_tt6&_nc_cat=103&ccb=1-7&_nc_sid=dd6889&_nc_ohc=pdiBFTF94XcQ7kNvwGbPP0E&_nc_oc=AdoHfkPHGLC7VHlG8qqIBzrFcWugl79GVBCwiRNSc-qewx43by1Mmb8RqDpebAnA0Sg&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfyY20M5E-JVODxHfiZMYoPZBHeSky74PD9M7E4pn4B2WA&oe=69C22030',
-    alt: 'Event photo 4',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472309071_539418275765231_7388765126112239868_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=108&ccb=1-7&_nc_sid=dd6889&_nc_ohc=O0VZlLviQAAQ7kNvwHtCXzG&_nc_oc=AdqZoFxekBpreKG8iyzQ40KQvpI-7mxYHVKl5uMlrVDeRp9iyM8q8K3rpmjrOzEHCP8&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfxpWKaNO4SGTKUCkHWkRS74P2HYIvjyv4txwH7HFvJ70Q&oe=69C224C9',
-    alt: 'Event photo 5',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472301011_539418412431884_723204715532122703_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=109&ccb=1-7&_nc_sid=dd6889&_nc_ohc=44iaHb22W7UQ7kNvwEEnYL5&_nc_oc=AdqKN5o6Vkh6tOoIIQbD7P0j0W5fGDzUHSYcmZgWVgKhlgYDN7EOgFtsewy-6SpVU_I&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfwMha9UPzBUNZMRoO5UWozbo34nHk4PleE8dNdLFH5DtA&oe=69C205F1',
-    alt: 'Event photo 6',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472393402_539418455765213_3211684536699568926_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=106&ccb=1-7&_nc_sid=dd6889&_nc_ohc=_8DDRBp_QeoQ7kNvwET3QVT&_nc_oc=Adq8WtRa-G5upSHHL5RsFkFi4FzZxDmahNA_R9xLxfGaD9g69nZ-Xo4huVVNXRlMTD0&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_AfzdO5Gfwz7o9XIUC8FqEjQuLpkY-va8PWXEgi_4JSq0mw&oe=69C2239F',
-    alt: 'Event photo 7',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472281157_539418405765218_2059498446580071846_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=100&ccb=1-7&_nc_sid=dd6889&_nc_ohc=IKJpVlFRGmIQ7kNvwFiQh7r&_nc_oc=AdoPHZf3ltSlW2JNRq5k4OThsPbLwU2yG-I5cnJwO1seK-bjCede8JPvQ_-dDFkFIm0&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_Afw9W7ktbjpLHQ-cDq7OVQkajTKmU4Yv0tN1nxkrUVywKQ&oe=69C223B9',
-    alt: 'Event photo 8',
-    tag: 'Event',
-  },
-  {
-    src: 'https://scontent-dub4-1.xx.fbcdn.net/v/t39.30808-6/472264956_539418329098559_2371840461727908694_n.jpg?stp=dst-jpg_p320x320_tt6&_nc_cat=101&ccb=1-7&_nc_sid=dd6889&_nc_ohc=z_RsOvEcqt8Q7kNvwEsV3Fe&_nc_oc=AdpymGSNX6XJM36dik8BTV5bOVXC38YJhk8nWYuXEt-XMv6_xZBiasIFH-qxPhUcBEA&_nc_zt=23&_nc_ht=scontent-dub4-1.xx&_nc_gid=yEAOUtjFJho722dHPxAv8A&_nc_ss=8&oh=00_Afwu47dhH4l_KjanZ7V2-3r70xX_XExIM4EmqfhtyjePxw&oe=69C22CF1',
-    alt: 'Event photo 9',
-    tag: 'Event',
-  },
 ] as const
 
 const galleryTabs = ['All', 'Portrait', 'Street', 'Event', 'Landscape'] as const
