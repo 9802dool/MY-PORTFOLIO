@@ -74,7 +74,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                      <p className="text-gray-900 dark:text-white">Your City, Country</p>
+                      <p className="text-gray-900 dark:text-white">Chaguanas, Trinidad and Tobago</p>
                     </div>
                   </div>
                 </div>
