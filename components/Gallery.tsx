@@ -83,7 +83,7 @@ export default function Gallery() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-amber-700 via-white to-neutral-900 mx-auto mb-4" />
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A curated set of photography shots. Replace these placeholders with your real images in `public/`.
+            A curated mix of portraits, events, and landscapes-capturing real emotion, vibrant moments, and the beauty of the world through a focused, storytelling lens.
           </p>
         </Reveal>
 
