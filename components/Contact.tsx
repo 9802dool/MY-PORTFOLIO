@@ -100,7 +100,7 @@ export default function Contact() {
                       href: 'https://www.instagram.com/lookmehdey/',
                       icon: (
                         <img
-                          src="/ig icon.png"
+                          src="/icon/ig.png"
                           alt="Instagram icon"
                           className="w-5 h-5 object-contain"
                         />
