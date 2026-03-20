@@ -50,7 +50,7 @@ const socialLinks = [
     href: 'https://www.facebook.com/profile.php?id=100090911882183',
     icon: (
       <img
-        src="/fb icon.png"
+        src="/icons/fb icon.png"
         alt="Facebook icon"
         className="w-5 h-5 object-contain"
       />
