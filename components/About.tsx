@@ -34,7 +34,7 @@ export default function About() {
               <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-neutral-50/70 dark:bg-neutral-800/70 flex items-center justify-center ring-1 ring-amber-400/20">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-300/15 via-transparent to-black/10" />
                 <Image
-                  src="/profile.jpg"
+                  src="/me.PNG"
                   alt="Simeon Doolarsingh"
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
