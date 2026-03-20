@@ -18,14 +18,23 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <Reveal className="space-y-6">
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a passionate developer with a love for creating innovative solutions
-              and beautiful user experiences. With expertise in modern web technologies,
-              I bring ideas to life through clean, efficient code.
+              I&apos;m Simeon Doolarsingh, a photographer driven by a passion for
+              capturing authentic moments and transforming them into powerful visual
+              stories. With a sharp eye for detail and a commitment to clean,
+              intentional composition, I create images that feel genuine, expressive,
+              and deeply connected to the people and places they represent.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              My journey in tech started with curiosity and has evolved into a career
-              focused on building applications that make a difference. I enjoy working
-              on challenging projects and continuously learning new technologies.
+              My journey in photography began with curiosity-an urge to document the
+              world as I saw it. Over time, that curiosity evolved into a craft and a
+              career focused on storytelling through imagery. I enjoy taking on
+              creative challenges, exploring new techniques, and continuously refining
+              my approach to produce work that resonates.
+            </p>
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+              Whether I&apos;m documenting community initiatives, highlighting human
+              stories, or capturing the energy of an event, my goal is always the
+              same: to create visuals that leave a lasting impression.
             </p>
           </Reveal>
           
@@ -38,7 +47,7 @@ export default function About() {
                   alt="Simeon Doolarsingh"
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
-                  className="w-full h-full object-contain rounded-[1.75rem]"
+                  className="w-full h-full object-cover object-[center_15%] rounded-[1.75rem]"
                   quality={100}
                   priority
                 />
