@@ -32,7 +32,7 @@ export default function Contact() {
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
                       <img
-                        src="/email icon.png"
+                        src="/icon/email.png"
                         alt="Email icon"
                         className="w-6 h-6 object-contain"
                       />
@@ -45,7 +45,7 @@ export default function Contact() {
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
                       <img
-                        src="/location icon.png"
+                        src="/icon/loc.png"
                         alt="Location icon"
                         className="w-6 h-6 object-contain"
                       />
@@ -59,7 +59,7 @@ export default function Contact() {
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
                       <img
-                        src="/whats app.png"
+                        src="/icon/wa.png"
                         alt="whats app"
                         className="w-6 h-6 object-contain"
                       />
