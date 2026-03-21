@@ -1,8 +1,9 @@
 "use client"
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
 import { useRef } from 'react'
+
+const HOME_PAGE_MEDIA = '/home%20page.mp4'
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null)
@@ -21,20 +22,22 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950"
     >
-      {/* Background photo */}
+      {/* Background: home page media from public (full frame, no crop) */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 flex items-center justify-center bg-black"
         aria-hidden="true"
         style={{ scale, y }}
       >
-        <Image
-          src="/me1.png"
-          alt="Simeon portrait background"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover animate-hero-zoom"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="h-full w-full object-contain animate-hero-zoom"
+        >
+          <source src={HOME_PAGE_MEDIA} type="video/mp4" />
+        </video>
       </motion.div>
 
       <motion.div
