@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import fbIcon from '@/public/icon/fb.png'
+
 const socialLinks = [
   {
     name: 'GitHub',
@@ -49,9 +52,11 @@ const socialLinks = [
     name: 'Facebook',
     href: 'https://www.facebook.com/profile.php?id=100090911882183',
     icon: (
-      <img
-        src="/icons/fb icon.png"
+      <Image
+        src={fbIcon}
         alt="Facebook icon"
+        width={20}
+        height={20}
         className="w-5 h-5 object-contain"
       />
     ),

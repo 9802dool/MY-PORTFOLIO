@@ -55,3 +55,16 @@ body {
   animation-delay: 4s;
 }
 
+@keyframes hero-zoom {
+  0% {
+    filter: saturate(1);
+  }
+  100% {
+    filter: saturate(1.08);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 8s ease-in-out infinite alternate;
+}
+

@@ -29,6 +29,7 @@ const galleryItems = [
   { src: '/Landscape 1/L12.JPG', alt: 'Landscape photo 12', tag: 'Landscape' },
   { src: '/Landscape 1/L13.JPG', alt: 'Landscape photo 13', tag: 'Landscape' },
   { src: '/Landscape 1/L14.JPG', alt: 'Landscape photo 14', tag: 'Landscape' },
+  { src: '/Landscape 1/L15.JPG', alt: 'Landscape photo 15', tag: 'Landscape' },
 ] as const
 
 const galleryTabs = ['All', 'Portrait', 'Event', 'Landscape'] as const
@@ -77,7 +78,7 @@ export default function Gallery() {
       className="py-20 bg-neutral-50 dark:bg-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-16" variant="zoom">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Gallery
           </h2>
@@ -165,6 +166,7 @@ export default function Gallery() {
               key={`${item.alt}-${index}`}
               delay={index * 60}
               className="w-full"
+              variant={index % 2 === 0 ? 'left' : 'right'}
             >
               <button
                 type="button"

@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+import fbIcon from '@/public/icon/fb.png'
 import Reveal from '@/components/Reveal'
 import ContactForm from '@/components/ContactForm'
 
@@ -10,7 +12,7 @@ export default function Contact() {
       className="py-20 bg-neutral-50 dark:bg-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-16" variant="zoom">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
@@ -23,7 +25,7 @@ export default function Contact() {
 
         <div className="max-w-3xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <Reveal className="space-y-8" delay={100}>
+            <Reveal className="space-y-8" delay={100} variant="left">
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                   Contact Information
@@ -88,9 +90,11 @@ export default function Contact() {
                       name: 'Facebook',
                       href: 'https://www.facebook.com/profile.php?id=100090911882183',
                       icon: (
-                        <img
-                          src="/icons/fb icon.png"
+                        <Image
+                          src={fbIcon}
                           alt="Facebook icon"
+                          width={20}
+                          height={20}
                           className="w-5 h-5 object-contain"
                         />
                       ),
@@ -107,7 +111,7 @@ export default function Contact() {
                       ),
                     },
                   ].map((social, index) => (
-                    <Reveal key={social.name} delay={index * 80}>
+                    <Reveal key={social.name} delay={index * 80} variant="zoom">
                       <a
                         href={social.href}
                         className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-amber-700 hover:text-white transition-colors text-xl"
@@ -121,7 +125,7 @@ export default function Contact() {
               </div>
             </Reveal>
 
-            <Reveal delay={200}>
+            <Reveal delay={200} variant="right">
               <ContactForm />
             </Reveal>
           </div>

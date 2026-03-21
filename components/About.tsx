@@ -8,7 +8,7 @@ export default function About() {
       className="py-20 bg-neutral-50 dark:bg-neutral-900"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-16" variant="zoom">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
@@ -16,7 +16,7 @@ export default function About() {
         </Reveal>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <Reveal className="space-y-6">
+          <Reveal className="space-y-6" variant="left">
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
               I&apos;m Simeon Doolarsingh, a photographer driven by a passion for
               capturing authentic moments and transforming them into powerful visual
@@ -38,7 +38,7 @@ export default function About() {
             </p>
           </Reveal>
           
-          <Reveal className="relative" delay={150}>
+          <Reveal className="relative" delay={150} variant="right">
             <div className="aspect-[4/5] rounded-[2rem] bg-gradient-to-br from-amber-700 via-white to-neutral-900 p-2 shadow-2xl shadow-amber-900/20">
               <div className="relative w-full h-full rounded-[1.75rem] overflow-hidden bg-neutral-50/70 dark:bg-neutral-800/70 flex items-center justify-center ring-1 ring-amber-400/20">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-300/15 via-transparent to-black/10" />
