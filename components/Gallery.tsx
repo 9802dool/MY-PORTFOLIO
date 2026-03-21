@@ -20,6 +20,7 @@ const galleryItems = [
   { src: '/Landscape 1/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
   { src: '/Landscape 1/L4.JPG', alt: 'Landscape photo 4', tag: 'Landscape' },
   { src: '/Landscape 1/L5.JPG', alt: 'Landscape photo 5', tag: 'Landscape' },
+  { src: '/Landscape 1/L6.jpg', alt: 'Landscape photo 6', tag: 'Landscape' },
   { src: '/Landscape 1/L7.JPG', alt: 'Landscape photo 7', tag: 'Landscape' },
   { src: '/Landscape 1/L8.JPG', alt: 'Landscape photo 8', tag: 'Landscape' },
   { src: '/Landscape 1/L9.JPG', alt: 'Landscape photo 9', tag: 'Landscape' },
