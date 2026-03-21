@@ -43,7 +43,7 @@ export default function Hero() {
           alt=""
           fill
           priority
-          className="object-cover object-center animate-hero-zoom"
+          className="object-contain object-center animate-hero-zoom"
           sizes="100vw"
         />
       </motion.div>
