@@ -1,9 +1,10 @@
 "use client"
 
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
 import { useRef } from 'react'
 
-const HOME_PAGE_MEDIA = '/home%20page.mp4'
+const HERO_BACKGROUND = '/me2.jpg'
 
 function scrollToId(id: string) {
   const el = document.querySelector(id)
@@ -33,20 +34,18 @@ export default function Hero() {
       className="relative flex min-h-[100svh] min-h-screen items-center justify-center overflow-hidden bg-stone-950"
     >
       <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center bg-black"
+        className="absolute inset-0 z-0 overflow-hidden bg-black"
         aria-hidden="true"
         style={{ scale, y }}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="h-full w-full object-contain animate-hero-zoom"
-        >
-          <source src={HOME_PAGE_MEDIA} type="video/mp4" />
-        </video>
+        <Image
+          src={HERO_BACKGROUND}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center animate-hero-zoom"
+          sizes="100vw"
+        />
       </motion.div>
 
       <motion.div
