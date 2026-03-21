@@ -38,7 +38,8 @@ export default function Navbar() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href)
     if (element) {
-      const offset = 80
+      const offset =
+        typeof window !== 'undefined' && window.innerWidth < 768 ? 68 : 84
       const elementPosition = element.getBoundingClientRect().top
       const offsetPosition = elementPosition + window.pageYOffset - offset
 
@@ -70,27 +71,27 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+      className={`sticky top-0 w-full z-50 transition-all duration-300 border-b ${
         isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg'
-          : 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-md border-b border-white/10 dark:border-gray-800/40'
+          ? 'bg-[#f7f4ef]/95 dark:bg-stone-925/95 backdrop-blur-md shadow-sm border-stone-200/80 dark:border-white/[0.06]'
+          : 'bg-[#f7f4ef]/80 dark:bg-stone-925/80 backdrop-blur-md border-transparent dark:border-white/[0.04]'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-[4.25rem]">
           <Link
             href="/"
-            className="text-xl font-bold text-gray-900 dark:text-white hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
+            className="font-display text-2xl sm:text-[1.65rem] tracking-tight text-stone-900 dark:text-stone-100 hover:text-amber-800 dark:hover:text-amber-400/90 transition-colors"
             onClick={handleLogoClick}
           >
             Look Meh Dey
           </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-0.5 md:hidden">
             <ThemeToggle />
             <button
               type="button"
-              className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 hover:bg-gray-100/60 dark:hover:bg-gray-800/60 transition"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-stone-700 transition hover:bg-stone-200/50 hover:text-amber-800 dark:text-stone-300 dark:hover:bg-stone-800/60 dark:hover:text-amber-400"
               aria-label="Toggle navigation menu"
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -120,13 +121,13 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-amber-700 dark:hover:text-amber-400 transition-colors cursor-pointer"
+                className="text-[11px] uppercase tracking-studio font-medium text-stone-600 dark:text-stone-400 hover:text-amber-800 dark:hover:text-amber-400 transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -136,17 +137,17 @@ export default function Navbar() {
         </div>
 
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          className={`overflow-hidden transition-all duration-300 ease-out md:hidden ${
+            isMenuOpen ? 'max-h-[min(70vh,22rem)] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-col gap-4 pt-4 pb-6 border-t border-gray-200/70 dark:border-gray-700/50">
+          <div className="flex max-h-[min(70vh,22rem)] flex-col gap-1 overflow-y-auto overscroll-contain border-t border-stone-200/80 py-2 pb-[max(1.25rem,env(safe-area-inset-bottom))] dark:border-stone-700/50">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="text-gray-800 dark:text-gray-200 hover:text-amber-700 dark:hover:text-amber-400 transition-colors"
+                className="min-h-[44px] rounded-md px-1 py-2.5 text-sm font-medium uppercase tracking-studio text-stone-800 transition-colors hover:bg-stone-200/60 hover:text-amber-800 active:bg-stone-200/80 dark:text-stone-200 dark:hover:bg-stone-800/50 dark:hover:text-amber-400"
               >
                 {link.label}
               </a>

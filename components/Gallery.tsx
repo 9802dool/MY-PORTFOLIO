@@ -139,20 +139,24 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-20 bg-neutral-50 dark:bg-neutral-900"
+      className="scroll-mt-[4.5rem] border-t border-stone-200/80 bg-stone-100/40 py-16 sm:py-24 dark:border-stone-800/80 dark:bg-stone-900/40"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16" variant="zoom">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <Reveal className="mb-16 text-center" variant="zoom">
+          <p className="mb-3 text-[11px] uppercase tracking-studio text-amber-800/90 dark:text-amber-500/90">
+            Selected work
+          </p>
+          <h2 className="font-display text-4xl font-medium tracking-tight text-stone-900 dark:text-stone-100 md:text-5xl">
             Gallery
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-700 via-white to-neutral-900 mx-auto mb-4" />
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            A curated mix of portraits, events, and landscapes-capturing real emotion, vibrant moments, and the beauty of the world through a focused, storytelling lens.
+          <div className="mx-auto mt-5 h-px w-16 bg-gradient-to-r from-transparent via-amber-700/80 to-transparent" />
+          <p className="mx-auto mt-8 max-w-2xl text-[17px] leading-relaxed text-stone-600 dark:text-stone-400">
+            Portraits, events, and landscapes—real emotion, vibrant moments, and
+            places seen through a focused, storytelling lens.
           </p>
         </Reveal>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
           {galleryTabs.map((tab) => (
             <button
               key={tab}
@@ -161,17 +165,17 @@ export default function Gallery() {
                 setActiveTab(tab)
                 setActiveIndex(null)
               }}
-              className={`px-4 py-2 rounded-full text-sm font-semibold border transition-colors ${
+              className={`min-h-[44px] border px-4 py-2.5 text-[11px] font-semibold uppercase tracking-studio transition-colors sm:px-5 ${
                 activeTab === tab
-                  ? 'bg-amber-700 text-white border-amber-700'
-                  : 'bg-white/70 dark:bg-neutral-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-neutral-700 hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300'
+                  ? 'border-amber-800 bg-amber-800 text-white dark:border-amber-700 dark:bg-amber-700'
+                  : 'border-stone-300/90 bg-white/90 text-stone-600 hover:border-amber-700/50 hover:text-amber-900 dark:border-stone-600 dark:bg-stone-850 dark:text-stone-300 dark:hover:border-amber-500/50 dark:hover:text-amber-200'
               }`}
             >
               {tab}
             </button>
           ))}
         </div>
-        <div className="flex items-center justify-center gap-3 mb-8">
+        <div className="mb-10 flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={() => {
@@ -182,11 +186,11 @@ export default function Gallery() {
               }
               showPrevious()
             }}
-            className="w-10 h-10 rounded-full bg-white/70 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200 flex items-center justify-center hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center border border-stone-300/90 bg-white/90 text-stone-700 transition hover:border-amber-700/50 hover:text-amber-900 active:bg-stone-100 dark:border-stone-600 dark:bg-stone-850 dark:text-stone-200 dark:hover:border-amber-500/50 dark:hover:text-amber-200"
             aria-label="Previous photo"
           >
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -207,7 +211,7 @@ export default function Gallery() {
               }
               showNext()
             }}
-            className="w-10 h-10 rounded-full bg-white/70 dark:bg-neutral-800 border border-gray-300 dark:border-neutral-700 text-gray-700 dark:text-gray-200 flex items-center justify-center hover:border-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors"
+            className="flex min-h-[44px] min-w-[44px] items-center justify-center border border-stone-300/90 bg-white/90 text-stone-700 transition hover:border-amber-700/50 hover:text-amber-900 active:bg-stone-100 dark:border-stone-600 dark:bg-stone-850 dark:text-stone-200 dark:hover:border-amber-500/50 dark:hover:text-amber-200"
             aria-label="Next photo"
           >
             <svg
@@ -224,7 +228,7 @@ export default function Gallery() {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 md:gap-4">
           {filteredItems.map((item, index) => (
             <Reveal
               key={`${item.src}-${index}`}
@@ -238,7 +242,7 @@ export default function Gallery() {
                 className="group w-full text-left"
                 aria-label={`Open photo: ${item.badge ?? item.tag}`}
               >
-                <div className="relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-lg">
+                <div className="relative aspect-[4/3] overflow-hidden border border-stone-200/90 bg-stone-50 shadow-sm transition hover:border-amber-800/25 hover:shadow-md dark:border-stone-700/80 dark:bg-stone-900/50 dark:hover:border-amber-500/30 md:aspect-video">
                   <Image
                     src={item.src}
                     alt={item.alt}
@@ -249,13 +253,13 @@ export default function Gallery() {
                     priority={index < 3}
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
-                    <span className="px-3 py-1 rounded-full bg-amber-500/10 backdrop-blur-md border border-amber-400/20 text-amber-100 text-xs sm:text-sm font-semibold max-w-[min(100%,14rem)] truncate">
+                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
+                    <span className="max-w-[min(100%,14rem)] truncate border border-white/25 bg-black/35 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white backdrop-blur-sm sm:text-[11px]">
                       {item.badge ?? item.tag}
                     </span>
-                    <span className="text-white/80 text-sm font-medium">
+                    <span className="text-xs font-medium text-white/90">
                       View
                     </span>
                   </div>
@@ -268,13 +272,13 @@ export default function Gallery() {
 
       {activeItem && activeIndex !== null && (
         <div
-          className="fixed inset-0 z-[60] bg-black/90"
+          className="fixed inset-0 z-[60] bg-black/90 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
           role="dialog"
           aria-modal="true"
           onClick={() => setActiveIndex(null)}
         >
           <div
-            className="relative w-full h-full overflow-hidden bg-black"
+            className="relative h-full w-full overflow-hidden bg-black touch-pan-y"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -292,11 +296,11 @@ export default function Gallery() {
                 <button
                   type="button"
                   onClick={showPrevious}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:left-3 sm:h-12 sm:w-12"
                   aria-label="Previous photo"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -310,11 +314,11 @@ export default function Gallery() {
                 <button
                   type="button"
                   onClick={showNext}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:right-3 sm:h-12 sm:w-12"
                   aria-label="Next photo"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="h-5 w-5"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -331,11 +335,11 @@ export default function Gallery() {
             <button
               type="button"
               onClick={() => setActiveIndex(null)}
-              className="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+              className="absolute right-2 top-2 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md transition-colors hover:bg-white/20 sm:right-3 sm:top-3 sm:h-12 sm:w-12"
               aria-label="Close"
             >
               <svg
-                className="w-5 h-5"
+                className="h-5 w-5"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -348,7 +352,7 @@ export default function Gallery() {
               </svg>
             </button>
 
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-white font-semibold truncate">

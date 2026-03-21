@@ -2,23 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Warm paper / editorial photography palette */
-  --background: #f5f1e8;
-  --foreground: #161616;
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0b0b0d;
-    --foreground: #f1e6cf;
-  }
+:root {
+  --background: #f7f4ef;
+  --foreground: #141312;
+  --muted: #5c5650;
+  --border-subtle: rgba(20, 19, 18, 0.08);
+}
+
+.dark {
+  --background: #0c0b0a;
+  --foreground: #f2ebe3;
+  --muted: #a39e96;
+  --border-subtle: rgba(242, 235, 227, 0.08);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgba(180, 83, 9, 0.22);
 }
 
 @layer utilities {

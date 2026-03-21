@@ -9,30 +9,33 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-neutral-50 dark:bg-neutral-900"
+      className="scroll-mt-[4.5rem] border-t border-stone-200/80 bg-background py-16 sm:py-24 dark:border-stone-800/80 dark:bg-stone-925"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="text-center mb-16" variant="zoom">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
+        <Reveal className="mb-16 text-center" variant="zoom">
+          <p className="mb-3 text-[11px] uppercase tracking-studio text-amber-800/90 dark:text-amber-500/90">
+            Inquiries
+          </p>
+          <h2 className="font-display text-4xl font-medium tracking-tight text-stone-900 dark:text-stone-100 md:text-5xl">
+            Get in touch
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-700 via-white to-neutral-900 mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you.
-            Send me a message and I'll respond as soon as possible.
+          <div className="mx-auto mt-5 h-px w-16 bg-gradient-to-r from-transparent via-amber-700/80 to-transparent" />
+          <p className="mx-auto mt-8 max-w-2xl text-[17px] leading-relaxed text-stone-600 dark:text-stone-400">
+            Have a project in mind or want to collaborate? Send a note—responses
+            are usually quick during the week.
           </p>
         </Reveal>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            <Reveal className="space-y-8" delay={100} variant="left">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-14 md:grid-cols-2 md:gap-16">
+            <Reveal className="space-y-10" delay={100} variant="left">
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  Contact Information
+                <h3 className="mb-8 text-[11px] font-semibold uppercase tracking-studio text-stone-500 dark:text-stone-500">
+                  Contact
                 </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-stone-200/90 bg-white dark:border-stone-600 dark:bg-stone-850">
                       <img
                         src="/icon/email.png"
                         alt="Email icon"
@@ -40,12 +43,19 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Email</p>
-                      <p className="text-gray-900 dark:text-white">simeondoolarsingh@hotmail.com</p>
+                      <p className="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-500">
+                        Email
+                      </p>
+                      <a
+                        href="mailto:simeondoolarsingh@hotmail.com"
+                        className="mt-0.5 block text-stone-900 transition hover:text-amber-800 dark:text-stone-100 dark:hover:text-amber-400"
+                      >
+                        simeondoolarsingh@hotmail.com
+                      </a>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-stone-200/90 bg-white dark:border-stone-600 dark:bg-stone-850">
                       <img
                         src="/icon/loc.png"
                         alt="Location icon"
@@ -53,13 +63,17 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">Location</p>
-                      <p className="text-gray-900 dark:text-white">Chaguanas, Trinidad and Tobago</p>
+                      <p className="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-500">
+                        Location
+                      </p>
+                      <p className="mt-0.5 text-stone-900 dark:text-stone-100">
+                        Chaguanas, Trinidad and Tobago
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-lg flex items-center justify-center">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center border border-stone-200/90 bg-white dark:border-stone-600 dark:bg-stone-850">
                       <img
                         src="/icon/wa.png"
                         alt="whats app"
@@ -67,12 +81,14 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">whats app</p>
+                      <p className="text-xs uppercase tracking-wider text-stone-500 dark:text-stone-500">
+                        WhatsApp
+                      </p>
                       <a
                         href="https://wa.me/18683224691"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-900 dark:text-white hover:text-amber-700 transition-colors"
+                        className="mt-0.5 block text-stone-900 transition hover:text-amber-800 dark:text-stone-100 dark:hover:text-amber-400"
                       >
                         18683224691
                       </a>
@@ -81,10 +97,10 @@ export default function Contact() {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-                  Social Links
+                <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-studio text-stone-500 dark:text-stone-500">
+                  Social
                 </h3>
-                <div className="flex space-x-4">
+                <div className="flex gap-3">
                   {[
                     {
                       name: 'Facebook',
@@ -114,7 +130,7 @@ export default function Contact() {
                     <Reveal key={social.name} delay={index * 80} variant="zoom">
                       <a
                         href={social.href}
-                        className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-amber-700 hover:text-white transition-colors text-xl"
+                        className="flex h-12 w-12 items-center justify-center border border-stone-200/90 bg-white text-stone-800 transition hover:border-amber-800 hover:bg-amber-800 hover:text-white dark:border-stone-600 dark:bg-stone-850 dark:text-stone-100 dark:hover:border-amber-600 dark:hover:bg-amber-700"
                         aria-label={social.name}
                       >
                         {social.icon}

@@ -110,13 +110,16 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-6 border border-stone-200/90 bg-white/80 p-6 shadow-sm dark:border-stone-600 dark:bg-stone-850/80 sm:p-8"
+    >
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          className="mb-2 block text-[11px] font-semibold uppercase tracking-studio text-stone-600 dark:text-stone-400"
         >
-          Name <span className="text-amber-500">*</span>
+          Name <span className="text-amber-700 dark:text-amber-500">*</span>
         </label>
         <input
           type="text"
@@ -124,24 +127,24 @@ export default function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full border bg-white px-4 py-3 text-base text-stone-900 transition focus:border-amber-800 focus:outline-none focus:ring-1 focus:ring-amber-800 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500 ${
             errors.name
-              ? 'border-amber-500 dark:border-amber-500'
-              : 'border-gray-300 dark:border-gray-600'
+              ? 'border-amber-600 dark:border-amber-500'
+              : 'border-stone-300 dark:border-stone-600'
           }`}
           placeholder="Your Name"
         />
         {errors.name && (
-          <p className="mt-1 text-sm text-amber-600">{errors.name}</p>
+          <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">{errors.name}</p>
         )}
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          className="mb-2 block text-[11px] font-semibold uppercase tracking-studio text-stone-600 dark:text-stone-400"
         >
-          Email <span className="text-amber-500">*</span>
+          Email <span className="text-amber-700 dark:text-amber-500">*</span>
         </label>
         <input
           type="email"
@@ -149,24 +152,24 @@ export default function ContactForm() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition-colors ${
+          className={`w-full border bg-white px-4 py-3 text-stone-900 transition focus:border-amber-800 focus:outline-none focus:ring-1 focus:ring-amber-800 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500 ${
             errors.email
-              ? 'border-amber-500 dark:border-amber-500'
-              : 'border-gray-300 dark:border-gray-600'
+              ? 'border-amber-600 dark:border-amber-500'
+              : 'border-stone-300 dark:border-stone-600'
           }`}
           placeholder="simeondoolarsingh@hotmail.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-amber-600">{errors.email}</p>
+          <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">{errors.email}</p>
         )}
       </div>
 
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+          className="mb-2 block text-[11px] font-semibold uppercase tracking-studio text-stone-600 dark:text-stone-400"
         >
-          Message <span className="text-amber-500">*</span>
+          Message <span className="text-amber-700 dark:text-amber-500">*</span>
         </label>
         <textarea
           id="message"
@@ -174,32 +177,32 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none transition-colors ${
+          className={`w-full resize-none border bg-white px-4 py-3 text-base text-stone-900 transition focus:border-amber-800 focus:outline-none focus:ring-1 focus:ring-amber-800 dark:bg-stone-900 dark:text-stone-100 dark:focus:border-amber-500 dark:focus:ring-amber-500 ${
             errors.message
-              ? 'border-amber-500 dark:border-amber-500'
-              : 'border-gray-300 dark:border-gray-600'
+              ? 'border-amber-600 dark:border-amber-500'
+              : 'border-stone-300 dark:border-stone-600'
           }`}
           placeholder="Your message here..."
         />
         {errors.message && (
-          <p className="mt-1 text-sm text-amber-600">{errors.message}</p>
+          <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">{errors.message}</p>
         )}
-        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+        <p className="mt-1 text-xs text-stone-500 dark:text-stone-500">
           {formData.message.length} characters
         </p>
       </div>
 
       {submitStatus === 'success' && (
-        <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
-          <p className="text-sm text-green-800 dark:text-green-300">
+        <div className="border border-emerald-200/90 bg-emerald-50/90 p-4 dark:border-emerald-800/60 dark:bg-emerald-950/40">
+          <p className="text-sm text-emerald-900 dark:text-emerald-300">
             ✓ Thank you for your message! I'll get back to you soon.
           </p>
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg">
-          <p className="text-sm text-amber-800 dark:text-amber-200">
+        <div className="border border-amber-200/90 bg-amber-50/90 p-4 dark:border-amber-800/60 dark:bg-amber-950/30">
+          <p className="text-sm text-amber-900 dark:text-amber-200">
             ✗ Something went wrong. Please try again later.
           </p>
         </div>
@@ -208,10 +211,10 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform shadow-lg hover:shadow-xl ${
+        className={`min-h-[48px] w-full px-8 py-3 text-[11px] font-semibold uppercase tracking-studio transition ${
           isSubmitting
-            ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
-            : 'bg-amber-700 hover:bg-amber-800 hover:scale-105 text-white'
+            ? 'cursor-not-allowed bg-stone-400 text-white dark:bg-stone-600'
+            : 'bg-amber-800 text-white shadow-md hover:bg-amber-700 dark:bg-amber-700 dark:hover:bg-amber-600'
         }`}
       >
         {isSubmitting ? (
