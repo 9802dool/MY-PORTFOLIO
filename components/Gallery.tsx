@@ -4,7 +4,15 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Reveal from '@/components/Reveal'
 
-const galleryItems = [
+type GalleryItem = {
+  src: string
+  alt: string
+  tag: 'Portrait' | 'Landscape' | 'Event'
+  /** Shown on cards / lightbox title when set (e.g. event series name) */
+  badge?: string
+}
+
+const galleryItems: GalleryItem[] = [
   { src: '/Portrait for web/p1.JPG', alt: 'Portrait photo 1', tag: 'Portrait' },
   { src: '/Portrait for web/p2.JPG', alt: 'Portrait photo 2', tag: 'Portrait' },
   { src: '/Portrait for web/p3.JPG', alt: 'Portrait photo 3', tag: 'Portrait' },
@@ -15,6 +23,66 @@ const galleryItems = [
   { src: '/Portrait for web/p8.JPG', alt: 'Portrait photo 8', tag: 'Portrait' },
   { src: '/Portrait for web/p9.JPG', alt: 'Portrait photo 9', tag: 'Portrait' },
   { src: '/Portrait for web/p10.JPG', alt: 'Portrait photo 10', tag: 'Portrait' },
+  {
+    src: '/Zebapique Productions 2026/1.jpg',
+    alt: 'Zebapique Productions 2026 – photo 1',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/2.jpg',
+    alt: 'Zebapique Productions 2026 – photo 2',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/3.jpg',
+    alt: 'Zebapique Productions 2026 – photo 3',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/4.jpg',
+    alt: 'Zebapique Productions 2026 – photo 4',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/5.jpg',
+    alt: 'Zebapique Productions 2026 – photo 5',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/6.jpg',
+    alt: 'Zebapique Productions 2026 – photo 6',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/7.jpg',
+    alt: 'Zebapique Productions 2026 – photo 7',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/8.jpg',
+    alt: 'Zebapique Productions 2026 – photo 8',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/9.jpg',
+    alt: 'Zebapique Productions 2026 – photo 9',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
+  {
+    src: '/Zebapique Productions 2026/10.jpg',
+    alt: 'Zebapique Productions 2026 – photo 10',
+    tag: 'Event',
+    badge: 'Zebapique Productions 2026',
+  },
   { src: '/Landscape 1/L1.JPG', alt: 'Landscape photo 1', tag: 'Landscape' },
   { src: '/Landscape 1/L2.JPG', alt: 'Landscape photo 2', tag: 'Landscape' },
   { src: '/Landscape 1/L3.JPG', alt: 'Landscape photo 3', tag: 'Landscape' },
@@ -26,7 +94,7 @@ const galleryItems = [
   { src: '/Landscape 1/L9.JPG', alt: 'Landscape photo 9', tag: 'Landscape' },
   { src: '/Landscape 1/L11.JPG', alt: 'Landscape photo 11', tag: 'Landscape' },
   { src: '/Landscape 1/L15.JPG', alt: 'Landscape photo 15', tag: 'Landscape' },
-] as const
+]
 
 const galleryTabs = ['All', 'Portrait', 'Event', 'Landscape'] as const
 
@@ -159,7 +227,7 @@ export default function Gallery() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {filteredItems.map((item, index) => (
             <Reveal
-              key={`${item.alt}-${index}`}
+              key={`${item.src}-${index}`}
               delay={index * 60}
               className="w-full"
               variant={index % 2 === 0 ? 'left' : 'right'}
@@ -168,7 +236,7 @@ export default function Gallery() {
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className="group w-full text-left"
-                aria-label={`Open photo: ${item.tag}`}
+                aria-label={`Open photo: ${item.badge ?? item.tag}`}
               >
                 <div className="relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden bg-white/10 border border-white/20 shadow-lg">
                   <Image
@@ -184,8 +252,8 @@ export default function Gallery() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-3">
-                    <span className="px-3 py-1 rounded-full bg-amber-500/10 backdrop-blur-md border border-amber-400/20 text-amber-100 text-sm font-semibold">
-                      {item.tag}
+                    <span className="px-3 py-1 rounded-full bg-amber-500/10 backdrop-blur-md border border-amber-400/20 text-amber-100 text-xs sm:text-sm font-semibold max-w-[min(100%,14rem)] truncate">
+                      {item.badge ?? item.tag}
                     </span>
                     <span className="text-white/80 text-sm font-medium">
                       View
@@ -284,7 +352,7 @@ export default function Gallery() {
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-white font-semibold truncate">
-                    {activeItem.tag}
+                    {activeItem.badge ?? activeItem.tag}
                   </p>
                   <p className="text-white/70 text-sm truncate">
                     {activeItem.alt}
