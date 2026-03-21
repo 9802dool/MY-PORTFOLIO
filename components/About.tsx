@@ -43,11 +43,11 @@ export default function About() {
               <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2px] bg-stone-100 dark:bg-stone-850 ring-1 ring-stone-900/10 dark:ring-white/10">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-300/15 via-transparent to-black/10" />
                 <Image
-                  src="/me2.jpg"
+                  src="/me.PNG"
                   alt="Simeon Doolarsingh"
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
-                  className="h-full w-full object-cover object-center"
+                  className="h-full w-full object-contain object-center"
                   quality={100}
                   priority
                 />
