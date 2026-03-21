@@ -47,7 +47,7 @@ export default function About() {
                   alt="Simeon Doolarsingh"
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
-                  className="h-full w-full object-contain object-top"
+                  className="h-full w-full object-cover object-[center_18%]"
                   quality={100}
                   priority
                 />
