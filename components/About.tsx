@@ -10,7 +10,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-16 text-center" variant="zoom">
           <h2 className="font-display text-4xl font-medium tracking-tight text-stone-900 dark:text-stone-100 md:text-5xl">
-            About
+            About me
           </h2>
           <div className="mx-auto mt-5 h-px w-16 bg-gradient-to-r from-transparent via-amber-700/80 to-transparent" />
         </Reveal>
@@ -43,11 +43,11 @@ export default function About() {
               <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2px] bg-stone-100 dark:bg-stone-850 ring-1 ring-stone-900/10 dark:ring-white/10">
                 <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-amber-300/15 via-transparent to-black/10" />
                 <Image
-                  src="/me.PNG"
+                  src="/me2.jpg"
                   alt="Simeon Doolarsingh"
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
-                  className="h-full w-full object-cover object-[center_15%]"
+                  className="h-full w-full object-cover object-center"
                   quality={100}
                   priority
                 />
