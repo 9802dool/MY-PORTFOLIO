@@ -58,14 +58,6 @@ export default function Hero() {
         className="relative z-20 flex w-full max-w-4xl flex-col items-center px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-[max(5.5rem,env(safe-area-inset-top))] text-center sm:px-6 sm:pb-16 sm:pt-24"
         style={{ opacity: contentOpacity, y: contentY }}
       >
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5 text-[11px] uppercase tracking-studio text-white/75"
-        >
-          Trinidad & Tobago · Photography
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
