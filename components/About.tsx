@@ -9,9 +9,6 @@ export default function About() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal className="mb-16 text-center" variant="zoom">
-          <p className="mb-3 text-[11px] uppercase tracking-studio text-amber-800/90 dark:text-amber-500/90">
-            The studio
-          </p>
           <h2 className="font-display text-4xl font-medium tracking-tight text-stone-900 dark:text-stone-100 md:text-5xl">
             About
           </h2>
