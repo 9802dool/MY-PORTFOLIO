@@ -34,3 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# TTPSSWA — separate repo (junction into workspace for Cursor)
+/TTPSSWA/
+
