@@ -1,7 +1,26 @@
-export type InventoryItem = {
+export type Category = {
+  id: string;
+  name: string;
+  color: string;
+};
+
+export type Supplier = {
+  id: string;
+  name: string;
+  contact: string;
+  email: string;
+  phone: string;
+};
+
+export type Product = {
   id: string;
   sku: string;
   name: string;
+  description: string;
+  categoryId: string;
+  supplierId: string;
+  costPrice: number;
+  sellPrice: number;
   quantity: number;
   unit: string;
   location: string;
@@ -9,27 +28,25 @@ export type InventoryItem = {
   updatedAt: string;
 };
 
-export type ShipmentStatus =
-  | "draft"
-  | "scheduled"
-  | "in_transit"
-  | "delivered";
+export type MovementType =
+  | "received"
+  | "sold"
+  | "adjusted"
+  | "returned"
+  | "damaged";
 
-export type ShipmentLine = { sku: string; quantity: number };
-
-export type Shipment = {
+export type StockMovement = {
   id: string;
-  reference: string;
-  origin: string;
-  destination: string;
-  status: ShipmentStatus;
-  carrier: string;
-  eta: string | null;
-  lines: ShipmentLine[];
+  productId: string;
+  type: MovementType;
+  quantity: number;
+  note: string;
   createdAt: string;
 };
 
 export type HmsState = {
-  items: InventoryItem[];
-  shipments: Shipment[];
+  products: Product[];
+  categories: Category[];
+  suppliers: Supplier[];
+  movements: StockMovement[];
 };

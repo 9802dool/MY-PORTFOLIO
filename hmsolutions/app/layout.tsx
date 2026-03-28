@@ -14,9 +14,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HMSolutions — Logistics & inventory",
+  title: "HMSolutions — Inventory Management",
   description:
-    "HMSolutions: warehouse inventory, reorder signals, and shipment tracking in one workspace.",
+    "HMSolutions: product inventory, stock movements, categories, suppliers, and reorder alerts in one workspace.",
 };
 
 export default function RootLayout({
