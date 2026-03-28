@@ -2,6 +2,17 @@
 
 A modern, responsive personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
 
+## Vercel: multiple apps in this repo
+
+This repository contains **more than one Next.js app** in subfolders. On Vercel, create **one project per app** and set **Root Directory** to that folder:
+
+| App | Root Directory on Vercel |
+|-----|--------------------------|
+| TTPSSWA site | `TTPSSWA` |
+| HMSolutions (logistics / inventory) | `hmsolutions` |
+
+Import the same Git repo each time; only the root directory changes. See `hmsolutions/README.md` for HMSolutions-specific steps.
+
 ## Features
 
 - 🎨 Modern and professional design
