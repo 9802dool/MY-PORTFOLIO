@@ -9,9 +9,8 @@ This repository contains **more than one Next.js app** in subfolders. On Vercel,
 | App | Root Directory on Vercel |
 |-----|--------------------------|
 | TTPSSWA site | `TTPSSWA` |
-| HMSolutions (logistics / inventory) | `hmsolutions` |
 
-Import the same Git repo each time; only the root directory changes. See `hmsolutions/README.md` for HMSolutions-specific steps.
+Import the same Git repo; set **Root Directory** to `TTPSSWA` for that deployment.
 
 ## Features
 
