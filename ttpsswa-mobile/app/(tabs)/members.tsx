@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   Alert,
   KeyboardAvoidingView,
-  Linking,
   Platform,
   Pressable,
   ScrollView,
@@ -13,7 +12,7 @@ import {
 } from 'react-native';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors, { brand } from '@/constants/Colors';
-import { API_BASE } from '@/constants/Api';
+import { API_BASE, ensureApiBase, openTtpsswaUrl } from '@/constants/Api';
 
 type Tab = 'login' | 'signup';
 
@@ -34,6 +33,7 @@ export default function MembersScreen() {
   const inputStyle = [styles.input, { backgroundColor: c.surface, borderColor: c.border, color: c.text }];
 
   const handleLogin = async () => {
+    if (!ensureApiBase()) return;
     if (!loginEmail.trim() || !loginPass.trim()) {
       Alert.alert('Missing info', 'Please enter your email and password.');
       return;
@@ -51,7 +51,7 @@ export default function MembersScreen() {
         return;
       }
       Alert.alert('Success', 'You are logged in. Visit the full website for your member dashboard.', [
-        { text: 'Open Website', onPress: () => Linking.openURL(`${API_BASE}/members/login`) },
+        { text: 'Open Website', onPress: () => openTtpsswaUrl('/members/login') },
         { text: 'OK' },
       ]);
     } catch {
@@ -62,6 +62,7 @@ export default function MembersScreen() {
   };
 
   const handleSignup = async () => {
+    if (!ensureApiBase()) return;
     if (!signupName.trim() || !signupEmail.trim() || !signupPhone.trim()) {
       Alert.alert('Missing info', 'Please fill in all fields.');
       return;
@@ -142,10 +143,10 @@ export default function MembersScreen() {
 
         {/* Links */}
         <View style={styles.links}>
-          <Pressable onPress={() => Linking.openURL(`${API_BASE}/membership-services`)}>
+          <Pressable onPress={() => openTtpsswaUrl('/membership-services')}>
             <Text style={[styles.link, { color: brand }]}>View Membership Benefits →</Text>
           </Pressable>
-          <Pressable onPress={() => Linking.openURL(`${API_BASE}/members-portal`)}>
+          <Pressable onPress={() => openTtpsswaUrl('/members-portal')}>
             <Text style={[styles.link, { color: brand }]}>Full Members Portal →</Text>
           </Pressable>
         </View>

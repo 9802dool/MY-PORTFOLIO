@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors, { brand } from '@/constants/Colors';
-import { API_BASE } from '@/constants/Api';
+import { API_BASE, ensureApiBase } from '@/constants/Api';
 
 type RoomKey = 'presidential' | 'fullBed' | 'doubleBed';
 
@@ -87,6 +87,7 @@ export default function HotelScreen() {
       Alert.alert('No rooms', 'Select at least one room.');
       return;
     }
+    if (!ensureApiBase()) return;
 
     setSubmitting(true);
     try {

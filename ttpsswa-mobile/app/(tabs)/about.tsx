@@ -1,7 +1,8 @@
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useRouter } from 'expo-router';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors, { brand, navy } from '@/constants/Colors';
-import { API_BASE } from '@/constants/Api';
+import { openTtpsswaHome, openTtpsswaUrl } from '@/constants/Api';
 
 type TeamMember = {
   name: string;
@@ -15,13 +16,33 @@ const executive: TeamMember[] = [
   { name: 'Simeon Doolarsingh', role: 'Assistant General Secretary' },
 ];
 
-const subsidiaries = [
-  { name: 'Hotel Accommodations', desc: 'Stay at our 8-room property with presidential suites, full bed, and double bed rooms.', link: '/(tabs)/hotel' },
-  { name: 'Membership Benefits', desc: 'Health, education, recreation, and welfare programs for members.', url: `${API_BASE}/membership-services` },
-  { name: 'Central Committee', desc: 'Regional representatives across Trinidad & Tobago divisions.', url: `${API_BASE}/central-committee-representatives` },
+type Subsidiary =
+  | { name: string; desc: string; kind: 'tab'; href: '/(tabs)/hotel' }
+  | { name: string; desc: string; kind: 'web'; path: string };
+
+const subsidiaries: Subsidiary[] = [
+  {
+    name: 'Hotel Accommodations',
+    desc: 'Stay at our 8-room property with presidential suites, full bed, and double bed rooms.',
+    kind: 'tab',
+    href: '/(tabs)/hotel',
+  },
+  {
+    name: 'Membership Benefits',
+    desc: 'Health, education, recreation, and welfare programs for members.',
+    kind: 'web',
+    path: '/membership-services',
+  },
+  {
+    name: 'Central Committee',
+    desc: 'Regional representatives across Trinidad & Tobago divisions.',
+    kind: 'web',
+    path: '/central-committee-representatives',
+  },
 ];
 
 export default function AboutScreen() {
+  const router = useRouter();
   const scheme = useColorScheme() ?? 'light';
   const c = Colors[scheme];
 
@@ -49,7 +70,7 @@ export default function AboutScreen() {
         ))}
       </View>
 
-      <Pressable onPress={() => Linking.openURL(`${API_BASE}/executive`)} style={[styles.outlineBtn, { borderColor: brand }]}>
+      <Pressable onPress={() => openTtpsswaUrl('/executive')} style={[styles.outlineBtn, { borderColor: brand }]}>
         <Text style={[styles.outlineBtnText, { color: brand }]}>View Full Executive Page →</Text>
       </Pressable>
 
@@ -59,7 +80,8 @@ export default function AboutScreen() {
         <Pressable
           key={s.name}
           onPress={() => {
-            if (s.url) Linking.openURL(s.url);
+            if (s.kind === 'tab') router.push(s.href);
+            else openTtpsswaUrl(s.path);
           }}
           style={[styles.subCard, { backgroundColor: c.surface, borderColor: c.border }]}
         >
@@ -73,7 +95,7 @@ export default function AboutScreen() {
       <View style={[styles.contactCard, { backgroundColor: c.surface, borderColor: c.border }]}>
         <Text style={[styles.contactLine, { color: c.text }]}>TTPSSWA Head Office</Text>
         <Text style={[styles.contactLine, { color: c.textMuted }]}>Trinidad & Tobago</Text>
-        <Pressable onPress={() => Linking.openURL(API_BASE)} style={{ marginTop: 16 }}>
+        <Pressable onPress={() => openTtpsswaHome()} style={{ marginTop: 16 }}>
           <Text style={[styles.link, { color: brand }]}>Visit Website →</Text>
         </Pressable>
       </View>

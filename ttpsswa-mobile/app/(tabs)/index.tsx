@@ -1,8 +1,8 @@
-import { ScrollView, StyleSheet, Text, View, Pressable, Linking } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors, { navy, brand } from '@/constants/Colors';
-import { API_BASE } from '@/constants/Api';
+import { openTtpsswaHome, openTtpsswaUrl } from '@/constants/Api';
 
 function QuickAction({ title, subtitle, onPress, color }: { title: string; subtitle: string; onPress: () => void; color: string }) {
   return (
@@ -48,7 +48,7 @@ export default function HomeScreen() {
           <QuickAction
             title="Membership Services"
             subtitle="View benefits"
-            onPress={() => Linking.openURL(`${API_BASE}/membership-services`)}
+            onPress={() => openTtpsswaUrl('/membership-services')}
             color="#7c3aed"
           />
           <QuickAction
@@ -76,7 +76,7 @@ export default function HomeScreen() {
       {/* Visit website */}
       <View style={styles.section}>
         <Pressable
-          onPress={() => Linking.openURL(API_BASE)}
+          onPress={() => openTtpsswaHome()}
           style={[styles.webBtn, { backgroundColor: brand }]}
         >
           <Text style={styles.webBtnText}>Visit Full Website</Text>
