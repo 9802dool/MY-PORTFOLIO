@@ -37,9 +37,27 @@ powershell -File tobago-to-the-world/scripts/push-standalone-to-new-remote.ps1 -
 
 3. In Vercel: **Import** that new repo, leave **Root Directory** blank (or `.`), framework **Next.js**, then deploy.
 
-### Optional: GitHub CLI
+### GitHub CLI (automated)
 
-After `gh auth login`:
+`gh auth login` must finish in **your** browser once (the agent cannot approve OAuth for you).
+
+From the **portfolio repo root**:
+
+1. **Login (one time)**
+
+```powershell
+powershell -File tobago-to-the-world/scripts/gh-auth-device.ps1
+```
+
+Paste the code from the clipboard at [github.com/login/device](https://github.com/login/device) and authorize **GitHub CLI**.
+
+2. **Create `tobago-to-the-world` on your account and push `main`**
+
+```powershell
+powershell -File tobago-to-the-world/scripts/setup-github-repo-and-push.ps1
+```
+
+Or manually after `gh auth login`:
 
 ```bash
 gh repo create YOUR_USER/tobago-to-the-world --public --description "Tobago To The World (TTW)"
