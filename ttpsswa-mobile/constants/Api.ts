@@ -50,12 +50,10 @@ function openExternalUrl(url: string): void {
 }
 
 export function openTtpsswaUrl(path: string): void {
-  if (!ensureApiBase()) return;
   const suffix = path.startsWith('/') ? path : `/${path}`;
   openExternalUrl(`${API_BASE}${suffix}`);
 }
 
 export function openTtpsswaHome(): void {
-  if (!ensureApiBase()) return;
   openExternalUrl(API_BASE);
 }

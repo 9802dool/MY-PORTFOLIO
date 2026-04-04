@@ -34,9 +34,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# TTPSSWA Expo — public API base URL (see ttpsswa-mobile/.env.example)
-ttpsswa-mobile/.env
-
 # Local GitHub PAT for gh CLI (never commit)
 .github-token
 
