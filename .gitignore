@@ -39,5 +39,4 @@ ttpsswa-mobile/.env
 
 # Local GitHub PAT for gh CLI (never commit)
 .github-token
-tobago-to-the-world/.github-token
 
