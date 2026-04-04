@@ -59,16 +59,32 @@ cp .env.example .env
 npm run start
 ```
 
-- Native: use **Expo Go** or `npm run ios` / `npm run android`.
+`npm run start` uses **`--lan`** so Expo Go gets a real `exp://192.168.x.x:8081` URL (not useless localhost). If LAN still fails, use **`npm run start:tunnel`** once and scan the new QR (works through the internet; needs a working tunnel/ngrok).
+
+- Native: **Expo Go** or `npm run ios` / `npm run android`.
 - Web dev: `npm run web`.
+
+### Windows: phone can’t connect (firewall) — fix once
+
+1. Set your Wi‑Fi network to **Private** (not Public): **Settings → Network & internet → Wi‑Fi → your network → Network profile → Private**.
+2. Open **PowerShell as Administrator** (Start → type PowerShell → right‑click → **Run as administrator**).
+3. Run (use your real path to this repo):
+
+   ```powershell
+   cd "C:\Users\Simeon\OneDrive\Documents\my-portfolio\ttpsswa-mobile"
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+   .\scripts\allow-expo-windows-firewall.ps1
+   ```
+
+4. Start the app again: `npm run start`. In Expo Go use **Enter URL**: `exp://YOUR_PC_IP:8081` (IP from `ipconfig` under **Wireless LAN adapter Wi‑Fi** → **IPv4**). Port **8082** if the terminal says Metro chose 8082.
 
 ### Phone not reading the QR code / project won’t open
 
 1. **Use Expo Go’s scanner** (inside the app), not only the phone camera.
-2. **Same Wi‑Fi** as your PC (or use tunnel when ngrok is healthy: `npx expo start --tunnel`).
-3. **Windows Firewall:** allow **Node.js** on **Private** networks, or run `npx expo start --tunnel`.
-4. **Manual URL:** in Expo Go → *Enter URL* and type `exp://YOUR_PC_LAN_IP:8081` (see the address printed in the terminal after `npx expo start`).
-5. Regenerate a QR image: `powershell -File scripts/open-expo-qr.ps1` (while `expo start` is running; edit `-Port` if you use another port).
+2. **Same Wi‑Fi** as your PC, network profile **Private** on Windows.
+3. **Firewall:** run `scripts\allow-expo-windows-firewall.ps1` as Administrator (see above), or `npm run start:tunnel`.
+4. **Manual URL:** Expo Go → *Enter URL* → `exp://YOUR_PC_LAN_IP:8081` (match the port shown in the terminal).
+5. QR image: `powershell -File scripts/open-expo-qr.ps1` (add `-Port 8082` if needed).
 
 ## Native builds
 

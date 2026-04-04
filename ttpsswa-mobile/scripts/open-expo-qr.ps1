@@ -1,6 +1,6 @@
 # Run `npx expo start` (or `--lan --port 8082` if 8081 is busy). Same Wi‑Fi as your phone.
 # Then: powershell -File scripts/open-expo-qr.ps1
-# Opens a QR image for Expo Go and the dev tools page.
+# Downloads expo-qr.png and opens it in your default image viewer for scanning.
 
 param([int]$Port = 8081)
 
@@ -25,5 +25,4 @@ $out = Join-Path $root "expo-qr.png"
 
 Write-Host "Expo URL: $exp" -ForegroundColor Cyan
 Invoke-WebRequest -Uri $qrUrl -OutFile $out -UseBasicParsing
-Start-Process $out
-Start-Process "http://localhost:$Port"
+Start-Process -FilePath (Resolve-Path $out)
