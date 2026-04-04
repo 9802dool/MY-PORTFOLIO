@@ -39,22 +39,33 @@ powershell -File tobago-to-the-world/scripts/push-standalone-to-new-remote.ps1 -
 
 ### GitHub CLI (automated)
 
-`gh auth login` must finish in **your** browser once (the agent cannot approve OAuth for you).
+From the **portfolio repo root**, `setup-github-repo-and-push.ps1` will log in **without a browser** if it finds a token:
 
-From the **portfolio repo root**:
+- Environment variable **`GH_TOKEN`** or **`GITHUB_TOKEN`** (classic PAT with **repo** scope), or
+- A **token file** (single line, the PAT only), gitignored:
+  - `%USERPROFILE%\.tobago-ttw-github-token`, or
+  - `.github-token` in the portfolio root, or
+  - `tobago-to-the-world/.github-token`
 
-1. **Login (one time)**
+Create a token: [github.com/settings/tokens](https://github.com/settings/tokens) → Generate new token (classic) → enable **repo**.
 
-```powershell
-powershell -File tobago-to-the-world/scripts/gh-auth-device.ps1
-```
-
-Paste the code from the clipboard at [github.com/login/device](https://github.com/login/device) and authorize **GitHub CLI**.
-
-2. **Create `tobago-to-the-world` on your account and push `main`**
+Then either set a user env var in Windows, or save the PAT into one of the files above, then run:
 
 ```powershell
 powershell -File tobago-to-the-world/scripts/setup-github-repo-and-push.ps1
+```
+
+To verify auth only:
+
+```powershell
+powershell -File tobago-to-the-world/scripts/gh-ensure-auth.ps1
+gh auth status
+```
+
+**Optional (browser instead of token):**
+
+```powershell
+powershell -File tobago-to-the-world/scripts/gh-auth-device.ps1
 ```
 
 Or manually after `gh auth login`:

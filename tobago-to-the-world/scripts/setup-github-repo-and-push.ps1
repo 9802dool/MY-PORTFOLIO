@@ -1,19 +1,12 @@
-# After `gh auth login`, creates github.com/<you>/tobago-to-the-world (if missing) and pushes branch tobago-ttw-standalone as main.
+# Creates github.com/<you>/tobago-to-the-world (if missing) and pushes branch tobago-ttw-standalone as main.
 # Run from the portfolio repo root: my-portfolio
+# Auth: gh-ensure-auth.ps1 (GH_TOKEN, token file, or device flow — see README).
 
 $ErrorActionPreference = "Stop"
 $gh = "C:\Program Files\GitHub CLI\gh.exe"
 
-$prev = $ErrorActionPreference
-$ErrorActionPreference = "SilentlyContinue"
-& $gh auth status 2>&1 | Out-Null
-$authOk = ($LASTEXITCODE -eq 0)
-$ErrorActionPreference = $prev
-if (-not $authOk) {
-  Write-Host "Not logged in. Run first:" -ForegroundColor Yellow
-  Write-Host "  powershell -File tobago-to-the-world/scripts/gh-auth-device.ps1" -ForegroundColor White
-  exit 1
-}
+& "$PSScriptRoot/gh-ensure-auth.ps1"
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 $portfolioRoot = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $portfolioRoot
