@@ -38,6 +38,14 @@ Use a **dedicated Vercel project** (not your portfolio site).
 
 `vercel.json` in this folder sets the build and output directory so you do not have to configure them manually.
 
+### Monorepo + Root Directory `ttpsswa-mobile`
+
+With **Root Directory** set to `ttpsswa-mobile` on Vercel, **production builds should run from Git** (push to `main` on the linked repo). Running `vercel deploy` from *inside* `ttpsswa-mobile` makes the CLI look for `ttpsswa-mobile/ttpsswa-mobile` and fails. `vercel redeploy` of an old upload-only deployment can fail for the same reason—use a fresh Git deployment instead.
+
+### CORS and the live TTPSSWA API
+
+If **ttps://ttpsswa.vercel.app** is deployed from the separate GitHub repo [**TTPSSWA**](https://github.com/9802dool/TTPSSWA) (not from `MY-PORTFOLIO`), add the CORS helper there: copy **`middleware.ts`** and **`lib/mobile-web-cors.ts`** from this monorepo’s **`TTPSSWA/`** folder into that repository, commit, and deploy. The env vars **`MOBILE_WEB_ORIGINS`** / **`MOBILE_WEB_ALLOW_ALL_VERCEL`** only take effect once that code is live on the API.
+
 ## Local development
 
 ```bash
