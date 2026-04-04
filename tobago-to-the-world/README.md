@@ -13,9 +13,27 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Deploy on Vercel
 
-### This folder inside a monorepo
+Vercel does **not** list projects until you **import** a Git repository. Use one of the flows below.
 
-Import the parent repo and set **Root Directory** to `tobago-to-the-world`.
+### Monorepo (this app lives inside `MY-PORTFOLIO`)
+
+Use this if you have not created a separate `tobago-to-the-world` GitHub repo.
+
+1. Open [vercel.com/new](https://vercel.com/new) (log in if needed).
+2. **Add New… → Project** → **Import Git Repository**.
+3. If **`9802dool/MY-PORTFOLIO`** is missing, click **Adjust GitHub App Permissions** / **Configure GitHub App** and grant access to that repo (or “All repositories”), then refresh the list.
+4. Select **`9802dool/MY-PORTFOLIO`**.
+5. Before **Deploy**, expand **Root Directory** → **Edit** → select **`tobago-to-the-world`** (required — do not leave the repo root).
+6. Framework: **Next.js** (auto). **Deploy**.
+7. Optional: **Project → Settings → General** → change the project name to **Tobago To The World** or **TTW**.
+
+This folder includes a root [`vercel.json`](./vercel.json) so Vercel pins the Next.js install/build commands.
+
+From the portfolio root you can open Vercel in the browser:
+
+```powershell
+powershell -File tobago-to-the-world/scripts/open-vercel-new-project.ps1
+```
 
 ### Standalone GitHub repo (app at repository root)
 
@@ -35,7 +53,7 @@ Or on Windows, from the repo root:
 powershell -File tobago-to-the-world/scripts/push-standalone-to-new-remote.ps1 -RemoteUrl "https://github.com/YOUR_USER/tobago-to-the-world.git"
 ```
 
-3. In Vercel: **Import** that new repo, leave **Root Directory** blank (or `.`), framework **Next.js**, then deploy.
+3. In Vercel: **Import** that new repo, leave **Root Directory** empty (app is already at repo root), framework **Next.js**, then deploy.
 
 ### GitHub CLI (automated)
 
