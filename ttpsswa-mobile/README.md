@@ -2,7 +2,7 @@
 
 Expo Router app for the association: native (iOS/Android) and a static **web** build you can host separately.
 
-This project uses **Expo SDK 52** (stable) so it opens in the **Expo Go** app from the [App Store](https://apps.apple.com/app/expo-go/id982107779) / [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent). Older **SDK 55 canary** builds do **not** work with store Expo Go—QR codes would scan but the project would not load.
+This project uses **Expo SDK 54** so it matches current **Expo Go** (“Supported SDK 54” in app info). Install Expo Go from the [App Store](https://apps.apple.com/app/expo-go/id982107779) / [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent). If Expo Go is newer than your project SDK, upgrade this app with `npx expo install expo@^54 --fix` (see [upgrade guide](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/)).
 
 ## “No production deployment” / v0 project with nothing built
 
