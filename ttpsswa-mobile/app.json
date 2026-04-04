@@ -43,6 +43,12 @@
         "projectId": "3f081307-b132-4b5e-bb67-8bf520dd9d8b"
       }
     },
-    "owner": "dool9892"
+    "owner": "dool9892",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/3f081307-b132-4b5e-bb67-8bf520dd9d8b"
+    }
   }
 }
