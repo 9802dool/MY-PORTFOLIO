@@ -21,6 +21,9 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
+# Local QR helper (generated)
+expo-qr.png
+
 # debug
 npm-debug.*
 yarn-debug.*

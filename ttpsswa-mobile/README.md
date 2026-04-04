@@ -2,6 +2,8 @@
 
 Expo Router app for the association: native (iOS/Android) and a static **web** build you can host separately.
 
+This project uses **Expo SDK 52** (stable) so it opens in the **Expo Go** app from the [App Store](https://apps.apple.com/app/expo-go/id982107779) / [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent). Older **SDK 55 canary** builds do **not** work with store Expo Go—QR codes would scan but the project would not load.
+
 ## “No production deployment” / v0 project with nothing built
 
 Projects such as [v0-mobile-app-for-ttpsswa](https://vercel.com/simeon-doolarsinghs-projects/v0-mobile-app-for-ttpsswa) are often created **without a Git repository**, so Vercel never runs a build. Fix it by connecting this app’s source:
@@ -57,8 +59,16 @@ cp .env.example .env
 npm run start
 ```
 
-- Native: use Expo Go or `npm run ios` / `npm run android`.
+- Native: use **Expo Go** or `npm run ios` / `npm run android`.
 - Web dev: `npm run web`.
+
+### Phone not reading the QR code / project won’t open
+
+1. **Use Expo Go’s scanner** (inside the app), not only the phone camera.
+2. **Same Wi‑Fi** as your PC (or use tunnel when ngrok is healthy: `npx expo start --tunnel`).
+3. **Windows Firewall:** allow **Node.js** on **Private** networks, or run `npx expo start --tunnel`.
+4. **Manual URL:** in Expo Go → *Enter URL* and type `exp://YOUR_PC_LAN_IP:8081` (see the address printed in the terminal after `npx expo start`).
+5. Regenerate a QR image: `powershell -File scripts/open-expo-qr.ps1` (while `expo start` is running; edit `-Port` if you use another port).
 
 ## Native builds
 
