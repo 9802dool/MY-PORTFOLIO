@@ -1,39 +1,42 @@
 import { Alert } from 'react-native';
+import Constants from 'expo-constants';
 import * as WebBrowser from 'expo-web-browser';
 
 function trimTrailingSlash(url: string): string {
   return url.replace(/\/+$/, '');
 }
 
-/** Production TTPSSWA site when `EXPO_PUBLIC_API_BASE_URL` is not set (e.g. local Expo Go). */
-const DEFAULT_PUBLIC_SITE = 'https://ttpsswa.vercel.app';
+/** Last-resort origin if config + env are missing (e.g. very old OTA bundles). */
+const FALLBACK_PUBLIC_SITE = 'https://ttpsswa.vercel.app';
+
+function resolveApiBase(): string {
+  const fromExtra = Constants.expoConfig?.extra?.apiBaseUrl;
+  const extraStr = typeof fromExtra === 'string' ? fromExtra.trim() : '';
+  const envStr =
+    typeof process.env.EXPO_PUBLIC_API_BASE_URL === 'string'
+      ? process.env.EXPO_PUBLIC_API_BASE_URL.trim()
+      : '';
+  const raw = extraStr || envStr || FALLBACK_PUBLIC_SITE;
+  const base = trimTrailingSlash(raw);
+  return base.length > 0 ? base : FALLBACK_PUBLIC_SITE;
+}
 
 /**
- * Base URL of the TTPSSWA web deployment only (no trailing slash).
- * Override with `EXPO_PUBLIC_API_BASE_URL` in `.env` for staging or another host.
+ * Base URL of the TTPSSWA web deployment (no trailing slash).
+ * Order: app.config.js `extra.apiBaseUrl` → EXPO_PUBLIC_API_BASE_URL → production default.
  */
-export const API_BASE = trimTrailingSlash(
-  (process.env.EXPO_PUBLIC_API_BASE_URL?.trim() || DEFAULT_PUBLIC_SITE) as string
-);
+export const API_BASE = resolveApiBase();
 
 export function hasApiBase(): boolean {
-  return API_BASE.length > 0;
-}
-
-export function alertMissingApiBase(): void {
-  Alert.alert(
-    'TTPSSWA site URL not set',
-    'Set EXPO_PUBLIC_API_BASE_URL in ttpsswa-mobile/.env (no trailing slash).'
-  );
+  return resolveApiBase().length > 0;
 }
 
 /**
- * For native API calls: only fails if the base URL were ever empty (should not happen with default).
+ * Legacy guard for API screens. Always succeeds — URL is never empty (see resolveApiBase).
+ * Does not show an alert (avoids blocking users on stale OTA / env quirks).
  */
 export function ensureApiBase(): boolean {
-  if (hasApiBase()) return true;
-  alertMissingApiBase();
-  return false;
+  return true;
 }
 
 function openExternalUrl(url: string): void {
@@ -41,19 +44,16 @@ function openExternalUrl(url: string): void {
     try {
       await WebBrowser.openBrowserAsync(url);
     } catch {
-      Alert.alert(
-        'Could not open page',
-        'Open this link in your browser:\n\n' + url
-      );
+      Alert.alert('Could not open page', 'Open this link in your browser:\n\n' + url);
     }
   })();
 }
 
 export function openTtpsswaUrl(path: string): void {
   const suffix = path.startsWith('/') ? path : `/${path}`;
-  openExternalUrl(`${API_BASE}${suffix}`);
+  openExternalUrl(`${resolveApiBase()}${suffix}`);
 }
 
 export function openTtpsswaHome(): void {
-  openExternalUrl(API_BASE);
+  openExternalUrl(resolveApiBase());
 }
