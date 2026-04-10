@@ -2,10 +2,11 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Look Meh Dey photography — run dev on http://localhost:3000 (separate from WI-CONNECT on :3003)",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3000",
     "lint": "next lint"
   },
   "dependencies": {
