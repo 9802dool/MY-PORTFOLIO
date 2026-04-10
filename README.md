@@ -2,16 +2,6 @@
 
 A modern, responsive personal portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
 
-## Vercel: multiple apps in this repo
-
-This repository contains **more than one Next.js app** in subfolders. On Vercel, create **one project per app** and set **Root Directory** to that folder:
-
-| App | Root Directory on Vercel |
-|-----|--------------------------|
-| TTPSSWA site | `TTPSSWA` |
-
-Import the same Git repo; set **Root Directory** to `TTPSSWA` for that deployment.
-
 ## Features
 
 - 🎨 Modern and professional design
@@ -71,7 +61,6 @@ npm start
 ## Tech Stack
 
 - [Next.js 14](https://nextjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [TypeScript](https://typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React](https://react.dev/)
-
